@@ -207,10 +207,10 @@ function plausibleEvent(name, props) {
   if (window.plausible) window.plausible(name, { props: props || {} });
 }
 
-function fetchWithTimeout(url, ms) {
+function fetchWithTimeout(url, ms, init) {
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), ms);
-  return fetch(url, { signal: ctrl.signal }).finally(() => clearTimeout(timer));
+  return fetch(url, { ...init, signal: ctrl.signal }).finally(() => clearTimeout(timer));
 }
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -352,7 +352,11 @@ function wireWaitlistForm(formId, msgId, submitBtnId, formLabel) {
     msgEl.className = 'form-message';
 
     try {
-      const res = await fetchWithTimeout(form.action, FETCH_TIMEOUT);
+      const res = await fetchWithTimeout(form.action, FETCH_TIMEOUT, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' },
+      });
 
       if (res.ok) {
         form.style.display = 'none';
