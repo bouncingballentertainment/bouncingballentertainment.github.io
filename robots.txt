@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bouncingballentertainment.github.io/volum-website/sitemap.xml

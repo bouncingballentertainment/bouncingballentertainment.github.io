@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volum: Free Workout Tracker App · Progressive Overload Made Simple</title>
+  <meta name="description" content="Know exactly what to lift every session. Volum plans your workout: weight, sets, and reps. Your volume grows automatically. Free gym log app for Android & iOS, launching 2026.">
+
+  <meta property="og:title"       content="Volum: Free Workout Tracker App">
+  <meta property="og:description" content="Know exactly what to lift every session. Volum plans your workout so your volume grows automatically.">
+  <meta property="og:image"       content="https://bouncingballentertainment.github.io/volum-website/assets/og-image.png">
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://bouncingballentertainment.github.io/volum-website/">
+  <meta name="twitter:card"       content="summary_large_image">
+  <link rel="canonical"           href="https://bouncingballentertainment.github.io/volum-website/">
+
+  <link rel="preload" as="image" href="assets/hero-bg.png">
+
+  <script defer data-domain="bouncingballentertainment.github.io/volum-website"
+          src="https://plausible.io/js/script.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Volum",
+    "description": "Free workout tracker app that plans every session: weight, sets, and reps. Your volume grows automatically.",
+    "operatingSystem": ["Android", "iOS"],
+    "applicationCategory": "HealthApplication",
+    "inLanguage": ["en", "es", "pt"],
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "url": "https://bouncingballentertainment.github.io/volum-website/"
+  }
+  </script>
+
+  <meta name="theme-color" content="#0A121E">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="stylesheet" href="style.css?v=1.6">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Volum home">
+        <img src="assets/Wordmark.png" alt="Volum">
+      </a>
+      <div class="nav-links">
+        <a href="#features" data-i18n="nav_features">Features</a>
+      </div>
+
+      <div class="lang-picker" id="lang-picker">
+        <button class="lang-btn" id="lang-btn"
+                aria-haspopup="listbox" aria-expanded="false" aria-label="Change language">
+          <span id="lang-label">EN</span>
+          <svg viewBox="0 0 10 6" fill="currentColor" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg>
+        </button>
+        <ul class="lang-dropdown" id="lang-dropdown" role="listbox" aria-label="Language">
+          <li role="option" data-lang="en" tabindex="0" aria-selected="true">English</li>
+          <li role="option" data-lang="es" tabindex="0" aria-selected="false">Español</li>
+          <li role="option" data-lang="pt" tabindex="0" aria-selected="false">Português</li>
+        </ul>
+      </div>
+
+      <a href="#waitlist" class="btn btn-accent btn-sm nav-cta" data-i18n="nav_waitlist">Join Waitlist</a>
+      <button class="hamburger" id="hamburger"
+              aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="#features" data-i18n="nav_features">Features</a>
+      <div class="nav-mobile-lang">
+        <button data-lang="en" aria-selected="true">EN</button>
+        <button data-lang="es" aria-selected="false">ES</button>
+        <button data-lang="pt" aria-selected="false">PT</button>
+      </div>
+      <a href="#waitlist" class="btn btn-accent" data-i18n="nav_waitlist">Join Waitlist</a>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════ HERO ════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+
+    <div class="container hero-row">
+
+      <div class="hero-content">
+        <p class="hero-eyebrow" data-i18n="hero_eyebrow">Gym Tracker · Android & iOS</p>
+        <h1 class="hero-headline" data-i18n-html="hero_headline">You always know<br>what to lift.</h1>
+        <p class="hero-sub" data-i18n="hero_sub">
+          Stop wasting 20 minutes deciding what to lift. Volum plans every session — the exact weight, sets, and reps. Walk in, execute, grow.
+        </p>
+        <p class="hero-proof" data-i18n="hero_proof">One founder. 157 real sessions. 446,519 lbs tracked.</p>
+        <div class="platform-picker" data-form="waitlist-form-hero">
+          <button type="button" class="btn btn-ghost btn-sm platform-btn" data-platform="android" data-i18n="platform_android">Android</button>
+          <button type="button" class="btn btn-ghost btn-sm platform-btn" data-platform="ios" data-i18n="platform_ios">iPhone</button>
+        </div>
+        <form class="waitlist-form" id="waitlist-form-hero"
+              action="https://formspree.io/f/mgoqbdyo" method="POST">
+          <input type="hidden" name="utm_source" id="utm-source-hero">
+          <input type="hidden" name="platform" class="platform-hidden-input">
+          <input class="waitlist-input" type="email" name="email"
+                 placeholder="Your email address"
+                 data-i18n-placeholder="hero_input"
+                 required autocomplete="email">
+          <button class="btn btn-accent" type="submit" id="hero-submit-btn"
+                  data-i18n="hero_btn">Get Early Access</button>
+        </form>
+        <p class="form-privacy" data-i18n="form_privacy">No credit card. No spam. One email on launch day.</p>
+        <p class="form-consent" data-i18n-html="form_consent">By joining you agree to our <a href="https://bouncingballentertainment.github.io/volum-legal/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.</p>
+        <p class="form-message" id="hero-form-msg" aria-live="polite"></p>
+        <p class="hero-launch" data-i18n="hero_launch">Launching 2026. Android & iOS.</p>
+      </div>
+
+      <div class="hero-phones" aria-label="App screenshots">
+        <div class="podium-deck">
+
+          <div class="podium-card podium-left" tabindex="0">
+            <img src="assets/app_iamges/resized/Volum App (2).jpeg"
+                 alt="Volum workout screen showing Back and Front Shoulder routine with 7 exercises, sets, reps, and weight for each"
+                 class="showcase-img" loading="lazy" width="375" height="812">
+            <div class="showcase-overlay">
+              <h3>Every set mapped out</h3>
+              <p>Weight, sets, and reps for every exercise. Ready before you walk in.</p>
+            </div>
+          </div>
+
+          <div class="podium-card podium-center" tabindex="0">
+            <img src="assets/app_iamges/home.jpeg"
+                 alt="Volum home screen showing 9-day streak, 10,580 lbs weekly volume, 37 personal records, and workout routines"
+                 class="showcase-img" loading="eager" width="375" height="812">
+            <div class="showcase-overlay">
+              <h3>Everything in one place</h3>
+              <p>Streak, weekly volume, PRs, and all your routines on one screen.</p>
+            </div>
+          </div>
+
+          <div class="podium-card podium-right" tabindex="0">
+            <img src="assets/app_iamges/resized/Volum App (9).jpeg"
+                 alt="Volum analytics screen showing volume progression chart, 446,519 lbs total volume across 157 workouts"
+                 class="showcase-img" loading="lazy" width="375" height="812">
+            <div class="showcase-overlay">
+              <h3>Volume that only goes up</h3>
+              <p>446,519 lbs tracked. Every session adds to the curve.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- /hero-row -->
+
+    <div class="hero-scroll-hint" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- ══════════════════════════════ FEATURES ══════════════════════════════ -->
+  <section class="features" id="features">
+    <div class="container">
+      <p class="eyebrow" data-i18n="features_eyebrow">Progressive overload, automated</p>
+      <h2 data-i18n-html="features_h2">Your numbers go up. You don't touch the math.</h2>
+      <p class="features-tagline" data-i18n="features_tagline">No spreadsheets. No guessing your next weight. No app to fight with.</p>
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 11l3 3L22 4"/>
+              <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+            </svg>
+          </div>
+          <h3 data-i18n="feat1_h3">Always know your session</h3>
+          <p data-i18n="feat1_p">Every workout is planned before you arrive. The exact weight, sets, and reps. No guessing, no deciding mid-set.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+              <polyline points="17 6 23 6 23 12"/>
+            </svg>
+          </div>
+          <h3 data-i18n="feat2_h3">Volume that compounds</h3>
+          <p data-i18n="feat2_p">Each session builds on the last. Your numbers go up automatically, week after week, without you having to plan a thing.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10"/>
+              <line x1="12" y1="20" x2="12" y2="4"/>
+              <line x1="6"  y1="20" x2="6"  y2="14"/>
+            </svg>
+          </div>
+          <h3 data-i18n="feat3_h3">Track every lift</h3>
+          <p data-i18n="feat3_p">Personal records, session history, and volume over time. All in one clean dashboard. See exactly how far you've come.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9H4.5a2.5 2.5 0 010-5H6"/>
+              <path d="M18 9h1.5a2.5 2.5 0 000-5H18"/>
+              <path d="M4 22h16"/>
+              <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/>
+              <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/>
+              <path d="M18 2H6v7a6 6 0 0012 0V2z"/>
+            </svg>
+          </div>
+          <h3 data-i18n="feat4_h3">Milestones & achievements</h3>
+          <p data-i18n="feat4_p">Streaks, PRs, badges. 49 achievements to unlock. Progress you can see and feel. Every milestone earned.</p>
+        </div>
+
+      </div>
+
+      <div class="features-ai-callout">
+        <span class="features-ai-badge">AI Coach</span>
+        <p data-i18n="features_ai">Analyzes your training history and tells you exactly what weight to add today. Works from your very first session.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════ HOW IT WORKS ════════════════════════════ -->
+  <section class="how-it-works">
+    <div class="container">
+      <p class="eyebrow" data-i18n="hiw_eyebrow">The loop</p>
+      <h2 data-i18n="hiw_h2">Three steps. Every session.</h2>
+      <div class="steps-grid" id="steps-grid">
+
+        <div class="step">
+          <span class="step-number" aria-hidden="true">01</span>
+          <div class="step-dot" aria-hidden="true"></div>
+          <h3 data-i18n="step1_h3">Build your routine</h3>
+          <p data-i18n="step1_p">Add the exercises you do. Set your starting weights once. Done.</p>
+        </div>
+
+        <div class="step">
+          <span class="step-number" aria-hidden="true">02</span>
+          <div class="step-dot" aria-hidden="true"></div>
+          <h3 data-i18n="step2_h3">Walk in knowing your number</h3>
+          <p data-i18n="step2_p">Open the app. Volum shows exactly what to lift today. Weight, reps, sets already calculated.</p>
+        </div>
+
+        <div class="step">
+          <span class="step-number" aria-hidden="true">03</span>
+          <div class="step-dot" aria-hidden="true"></div>
+          <h3 data-i18n="step3_h3">Log and grow</h3>
+          <p data-i18n="step3_p">Tap through each set. Your volume compounds automatically. Next session is planned before you leave.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════ TESTIMONIALS ═══════════════════════════ -->
+  <section class="testimonials">
+    <div class="container">
+      <p class="eyebrow" data-i18n="testimonials_eyebrow">Beta Testers</p>
+      <h2 class="testimonials-heading" data-i18n="testimonials_h2">Real people. Real training.</h2>
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card" data-href="https://www.instagram.com/antoniomskt/">
+          <blockquote class="testimonial-quote" data-i18n="testimonial1_quote">"Volum has great functionality and is super easy to organise your workouts. It has a solid AI progression system that helps track when to increase weights and reps, and everything is fully adjustable: sets, weight, rest time, all of it."</blockquote>
+          <div class="testimonial-attr">
+            <span class="testimonial-name">Antonio Amorim</span>
+            <a class="testimonial-handle" href="https://www.instagram.com/antoniomskt/" target="_blank" rel="noopener"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@antoniomskt</a>
+          </div>
+        </div>
+
+        <div class="testimonial-card" data-href="https://www.instagram.com/evaristope_junior/">
+          <blockquote class="testimonial-quote" data-i18n="testimonial2_quote">"What impressed me most about Volum is the freedom to customise: add any exercise with any name, no generic list. The load progression tracking is excellent. You can clearly see how you're improving. For anyone who trains seriously and wants real control, this app is indispensable."</blockquote>
+          <div class="testimonial-attr">
+            <span class="testimonial-name">Evaristo Lopes</span>
+            <a class="testimonial-handle" href="https://www.instagram.com/evaristope_junior/" target="_blank" rel="noopener"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@evaristope_junior</a>
+          </div>
+        </div>
+
+        <div class="testimonial-card" data-href="https://www.instagram.com/marcelolemos.personal/">
+          <blockquote class="testimonial-quote" data-i18n="testimonial3_quote">"Simple, complete, and very well made. Total control over your workouts, easy to use, and everything I need to progress at the gym. Highly recommended."</blockquote>
+          <div class="testimonial-attr">
+            <span class="testimonial-name">Marcelo Lemos</span>
+            <a class="testimonial-handle" href="https://www.instagram.com/marcelolemos.personal/" target="_blank" rel="noopener"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@marcelolemos.personal</a>
+          </div>
+        </div>
+
+        <div class="testimonial-card" data-href="https://www.instagram.com/danirojasf/">
+          <blockquote class="testimonial-quote" data-i18n="testimonial4_quote">"Knowing exactly how much weight, how many reps, and how many sets for each exercise is a game changer. I used to waste time figuring it out at the gym. With Volum I walk in ready, execute, and can actually see my progression improving. It saves time and keeps you on track."</blockquote>
+          <div class="testimonial-attr">
+            <span class="testimonial-name">Daniela Rojas</span>
+            <a class="testimonial-handle" href="https://www.instagram.com/danirojasf/" target="_blank" rel="noopener"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@danirojasf</a>
+          </div>
+        </div>
+
+        <div class="testimonial-card" data-href="https://www.instagram.com/dine.fidelis/">
+          <blockquote class="testimonial-quote" data-i18n="testimonial5_quote">"Having the weight, reps and sets already planned for every exercise is exactly what I needed. No more guessing between sets. The progression tracking is the best part: you can see your numbers going up session after session. That visibility is what keeps you consistent."</blockquote>
+          <div class="testimonial-attr">
+            <span class="testimonial-name">Geraldine Fidelis</span>
+            <a class="testimonial-handle" href="https://www.instagram.com/dine.fidelis/" target="_blank" rel="noopener"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@dine.fidelis</a>
+          </div>
+        </div>
+
+        <div class="testimonial-card" data-href="https://www.instagram.com/karolainerochas/">
+          <blockquote class="testimonial-quote" data-i18n="testimonial6_quote">"Volum brings convenience — having your progress tracked in detail is wonderful. Being able to choose your goal — hypertrophy or endurance — and have your loads and reps adjusted accordingly makes Volum an essential app."</blockquote>
+          <div class="testimonial-attr">
+            <span class="testimonial-name">Karolaine Rocha</span>
+            <a class="testimonial-handle" href="https://www.instagram.com/karolainerochas/" target="_blank" rel="noopener"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@karolainerochas</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ MID-PAGE CTA ══════════════════════════ -->
+  <section class="mid-cta">
+    <div class="container">
+      <div class="mid-cta-inner">
+        <p class="mid-cta-heading" data-i18n="mid_cta_text">Ready to stop guessing at the gym?</p>
+        <div class="mid-cta-right">
+          <div class="platform-picker" data-form="waitlist-form-mid">
+            <button type="button" class="btn btn-ghost btn-sm platform-btn" data-platform="android" data-i18n="platform_android">Android</button>
+            <button type="button" class="btn btn-ghost btn-sm platform-btn" data-platform="ios" data-i18n="platform_ios">iPhone</button>
+          </div>
+          <form class="waitlist-form mid-cta-form" id="waitlist-form-mid"
+                action="https://formspree.io/f/mgoqbdyo" method="POST">
+            <input type="hidden" name="utm_source" id="utm-source-mid">
+            <input type="hidden" name="platform" class="platform-hidden-input">
+            <input class="waitlist-input" type="email" name="email"
+                   placeholder="Your email address"
+                   data-i18n-placeholder="hero_input"
+                   required autocomplete="email">
+            <button class="btn btn-accent" type="submit" id="mid-submit-btn"
+                    data-i18n="hero_btn">Get Early Access</button>
+          </form>
+          <p class="form-privacy" data-i18n="form_privacy">No credit card. No spam. One email on launch day.</p>
+          <p class="form-consent" data-i18n-html="form_consent">By joining you agree to our <a href="https://bouncingballentertainment.github.io/volum-legal/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.</p>
+          <p class="form-message" id="mid-form-msg" aria-live="polite"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════ REAL NUMBERS ════════════════════════════ -->
+  <section class="real-numbers">
+    <div class="container">
+      <p class="eyebrow" data-i18n="stats_eyebrow">Built on real training</p>
+      <h2 data-i18n="stats_h2">Tested in the gym, not a spreadsheet.</h2>
+      <p class="section-sub" data-i18n="stats_sub">
+        Volum was built and battle-tested through the founder's own training. Not simulated data.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number" data-target="446519">446,519</span>
+          <span class="stat-label" data-i18n="stat1_label">lbs of total volume tracked</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="157">157</span>
+          <span class="stat-label" data-i18n="stat2_label">workouts logged</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="37">37</span>
+          <span class="stat-label" data-i18n="stat3_label">personal records set</span>
+        </div>
+      </div>
+      <p class="stats-fine-print" data-i18n="stats_fine">From the founder's own sessions. Your results will vary based on your programme.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ VOLUME STATEMENT ═══════════════════════════ -->
+  <section class="volume-statement">
+    <div class="container">
+      <p class="eyebrow" data-i18n="vol_eyebrow">The principle behind the app</p>
+      <h2 data-i18n="vol_h2">Volume is the engine of progress.</h2>
+      <p class="volume-body" data-i18n="vol_body">
+        Sets × reps × weight. The total volume you move over time is what drives strength gains.
+        Volum exists for one purpose: to grow yours. Every session.
+      </p>
+      <div class="volume-formula" aria-label="sets times reps times weight equals progress">
+        <span data-i18n="vol_sets">sets</span>
+        <span class="op">×</span>
+        <span data-i18n="vol_reps">reps</span>
+        <span class="op">×</span>
+        <span data-i18n="vol_weight">weight</span>
+        <span class="op">=</span>
+        <span data-i18n="vol_progress">progress</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════ WAITLIST CTA ════════════════════════════ -->
+  <section class="waitlist-section" id="waitlist">
+    <div class="container waitlist-inner">
+      <h2 data-i18n="cta_h2">Stop guessing. Start growing.</h2>
+      <p data-i18n="cta_p">Your spot is free. We'll ping you the second Volum drops.</p>
+      <div class="platform-picker" data-form="waitlist-form-bottom">
+        <button type="button" class="btn btn-ghost btn-sm platform-btn" data-platform="android" data-i18n="platform_android">Android</button>
+        <button type="button" class="btn btn-ghost btn-sm platform-btn" data-platform="ios" data-i18n="platform_ios">iPhone</button>
+      </div>
+      <form class="waitlist-form waitlist-form-large" id="waitlist-form-bottom"
+            action="https://formspree.io/f/mgoqbdyo" method="POST">
+        <input type="hidden" name="utm_source" id="utm-source-bottom">
+        <input type="hidden" name="platform" class="platform-hidden-input">
+        <input class="waitlist-input" type="email" name="email"
+               placeholder="Your email address"
+               data-i18n-placeholder="hero_input"
+               required autocomplete="email">
+        <button class="btn btn-accent" type="submit" id="bottom-submit-btn"
+                data-i18n="cta_btn">Notify Me on Launch Day</button>
+      </form>
+      <p class="form-privacy" data-i18n="form_privacy">No credit card. No spam. One email on launch day.</p>
+      <p class="form-consent" data-i18n-html="form_consent">By joining you agree to our <a href="https://bouncingballentertainment.github.io/volum-legal/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.</p>
+      <p class="form-message" id="bottom-form-msg" aria-live="polite"></p>
+      <div class="share-nudge" id="share-nudge" style="display:none;">
+        <span data-i18n="share_nudge">Know someone who lifts?</span>
+        <button type="button" id="share-btn" data-i18n="share_btn">Share this page</button>
+        <p class="share-copied" id="share-copied" data-i18n="share_copied">Link copied!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ FOOTER ══════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="index.html" class="nav-logo" aria-label="Volum home">
+        <img src="assets/Wordmark.png" alt="Volum" style="height:26px;width:auto;">
+      </a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="#features"    data-i18n="nav_features">Features</a>
+        <a href="https://bouncingballentertainment.github.io/volum-legal/privacy-policy.html"
+           target="_blank" rel="noopener" data-i18n="footer_privacy">Privacy Policy</a>
+        <a href="https://bouncingballentertainment.github.io/volum-legal/terms-of-service.html"
+           target="_blank" rel="noopener" data-i18n="footer_terms">Terms of Service</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/app.volum/" target="_blank" rel="noopener" aria-label="Follow Volum on Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+          Instagram
+        </a>
+      </div>
+      <div class="footer-badges">
+        <span class="badge badge-play" id="play-badge" aria-label="Coming to Google Play" title="Coming soon">
+          <svg class="badge-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5v-17c0-.83.92-1.3 1.6-.86l14 8.5a1 1 0 010 1.72l-14 8.5C3.92 21.8 3 21.33 3 20.5z"/></svg>
+          <span data-i18n="footer_play">Coming to Google Play</span>
+        </span>
+        <span class="badge" title="iOS version coming soon">
+          <svg class="badge-icon" width="14" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <span data-i18n="footer_ios">Coming to App Store</span>
+        </span>
+      </div>
+      <p class="footer-copy" data-i18n="footer_copy">© 2026 Bouncing Ball Entertainment. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js?v=1.6"></script>
+</body>
+</html>
