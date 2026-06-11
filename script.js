@@ -50,6 +50,7 @@ const TRANSLATIONS = {
     form_success_mid:'You\'re on the list! We\'ll be in touch.',
     form_success_bottom:'You\'re in. We\'ll message you on launch day.',
     form_error:'Something went wrong. Try again.', sending:'Sending…',
+    platform_error:'Please select Android or iPhone.',
     form_privacy:'No credit card. No spam. One email on launch day.',
     platform_android:'Android', platform_ios:'iPhone',
     form_consent:'By joining you agree to our <a href="https://bouncingballentertainment.github.io/volum-legal/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.',
@@ -109,6 +110,7 @@ const TRANSLATIONS = {
     form_success_mid:'¡Estás en la lista! Estaremos en contacto.',
     form_success_bottom:'¡Ya estás dentro! Te escribiremos el día del lanzamiento.',
     form_error:'Algo salió mal. Inténtalo de nuevo.', sending:'Enviando…',
+    platform_error:'Por favor selecciona Android o iPhone.',
     form_privacy:'Sin tarjeta. Sin spam. Un correo el día del lanzamiento.',
     platform_android:'Android', platform_ios:'iPhone',
     form_consent:'Al unirte aceptas nuestra <a href="https://bouncingballentertainment.github.io/volum-legal/privacy-policy.html" target="_blank" rel="noopener">Política de Privacidad</a>.',
@@ -168,6 +170,7 @@ const TRANSLATIONS = {
     form_success_mid:'Você está na lista! Entraremos em contato.',
     form_success_bottom:'Você está dentro! Vamos te avisar no dia do lançamento.',
     form_error:'Algo deu errado. Tente novamente.', sending:'Enviando…',
+    platform_error:'Por favor selecione Android ou iPhone.',
     form_privacy:'Sem cartão. Sem spam. Um e-mail no dia do lançamento.',
     platform_android:'Android', platform_ios:'iPhone',
     form_consent:'Ao entrar você concorda com nossa <a href="https://bouncingballentertainment.github.io/volum-legal/privacy-policy.html" target="_blank" rel="noopener">Política de Privacidade</a>.',
@@ -305,12 +308,23 @@ function initNavbar() {
 /* ─── HAMBURGER MENU ─────────────────────────────── */
 
 function initHamburger() {
-  const btn   = document.getElementById('hamburger');
-  const menu  = document.getElementById('nav-mobile');
+  const btn      = document.getElementById('hamburger');
+  const menu     = document.getElementById('nav-mobile');
+  const langDrop = document.getElementById('lang-dropdown');
   if (!btn || !menu) return;
 
-  function open()  { menu.classList.add('open');    btn.setAttribute('aria-expanded', 'true');  btn.setAttribute('aria-label', 'Close menu'); }
-  function close() { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-label', 'Open menu');  }
+  function open() {
+    menu.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+    btn.setAttribute('aria-label', 'Close menu');
+    if (langDrop) { langDrop.setAttribute('aria-hidden', 'true'); langDrop.setAttribute('tabindex', '-1'); }
+  }
+  function close() {
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'Open menu');
+    if (langDrop) { langDrop.removeAttribute('aria-hidden'); langDrop.removeAttribute('tabindex'); }
+  }
   function toggle() { menu.classList.contains('open') ? close() : open(); }
 
   btn.addEventListener('click', toggle);
@@ -353,6 +367,8 @@ function wireWaitlistForm(formId, msgId, submitBtnId, formLabel) {
         picker.classList.add('shake');
         picker.addEventListener('animationend', () => picker.classList.remove('shake'), { once: true });
       }
+      msgEl.textContent = t('platform_error');
+      msgEl.className   = 'form-message form-error-msg';
       return;
     }
 
@@ -531,10 +547,15 @@ function initStepLoop() {
   const grid  = document.getElementById('steps-grid');
   if (!steps.length || reduceMotion) return;
 
-  const fill = document.createElement('div');
-  fill.className = 'step-connector-fill';
-  fill.setAttribute('aria-hidden', 'true');
-  grid.appendChild(fill);
+  const isMobile = window.innerWidth < 768;
+
+  let fill = null;
+  if (!isMobile) {
+    fill = document.createElement('div');
+    fill.className = 'step-connector-fill';
+    fill.setAttribute('aria-hidden', 'true');
+    grid.appendChild(fill);
+  }
 
   const fillScale = [0, 0.5, 1];
   let current = 0;
@@ -542,6 +563,7 @@ function initStepLoop() {
 
   function activate(i) {
     steps.forEach((s, idx) => s.classList.toggle('loop-active', idx === i));
+    if (!fill) return;
     if (i === 0) {
       fill.style.transition = 'none';
       fill.style.transform  = 'scaleX(0)';
@@ -562,8 +584,10 @@ function initStepLoop() {
     }
   }, 2500);
 
-  grid.addEventListener('mouseenter', () => { paused = true; });
-  grid.addEventListener('mouseleave', () => { paused = false; });
+  grid.addEventListener('mouseenter',  () => { paused = true; });
+  grid.addEventListener('mouseleave',  () => { paused = false; });
+  grid.addEventListener('touchstart',  () => { paused = true; },  { passive: true });
+  grid.addEventListener('touchend',    () => { paused = false; }, { passive: true });
 
   steps.forEach((step, i) => {
     step.addEventListener('click', () => { current = i; activate(i); });
@@ -665,6 +689,11 @@ function initPlatformPickers() {
           b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
         });
         hidden.value = btn.dataset.platform;
+        const msgEl = document.getElementById(form.id.replace('waitlist-form-', '') + '-form-msg');
+        if (msgEl && msgEl.classList.contains('form-error-msg')) {
+          msgEl.textContent = '';
+          msgEl.className   = 'form-message';
+        }
       });
     });
   });

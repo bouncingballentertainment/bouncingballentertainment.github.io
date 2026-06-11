@@ -209,6 +209,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   z-index: 100;
   transition: background 120ms ease, border-color 120ms ease;
   border-bottom: 1px solid transparent;
+  transform: translateZ(0);
+  will-change: transform;
 }
 .navbar.scrolled {
   background: rgba(26,26,46,0.88);
@@ -269,6 +271,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border-top: 1px solid var(--border);
   background: rgba(26,26,46,0.97);
   backdrop-filter: blur(12px);
+  transform: translateZ(0);
 }
 .nav-mobile.open { display: flex; }
 .nav-mobile a {
@@ -1192,12 +1195,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
   .hero { padding-top: 88px; min-height: auto; padding-bottom: 60px; }
   .hero-row { flex-direction: column; gap: 0; padding-bottom: 0; }
-  .hero-phones { margin-top: 40px; }
+  .hero-phones { margin-top: 24px; }
   .podium-left, .podium-right { display: none; }
-  .podium-center { width: 200px; transform: none; animation: none; margin: 0 auto; }
+  .podium-center { width: 270px; transform: none; animation: none; margin: 0 auto; }
   .hero-headline { font-size: 40px; letter-spacing: -1px; }
   .hero-sub      { font-size: 16px; }
   .waitlist-form { flex-direction: column; }
+  .waitlist-form .btn { width: 100%; }
+  .platform-picker .platform-btn { padding: 12px 22px; font-size: 14px; }
+  .form-consent { font-size: 12px; opacity: 0.9; }
   .mid-cta-inner { flex-direction: column; gap: 20px; }
   .mid-cta-heading { font-size: 20px; max-width: 100%; text-align: center; }
   .mid-cta-right { width: 100%; }
@@ -1236,6 +1242,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .testimonials-grid { grid-template-columns: 1fr; }
   .testimonials-heading { font-size: 30px; }
 
+  .testimonial-card { -webkit-tap-highlight-color: rgba(167,255,65,0.12); }
+  .testimonial-card:active { background: rgba(167,255,65,0.09); }
+  .testimonial-handle { padding: 6px 0; }
+
 }
 
 /* ─── RESPONSIVE — 480px ─────────────────────────── */
@@ -1246,6 +1256,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .stats-grid { gap: 32px; }
   .waitlist-form-large { width: 100%; }
 
+}
+
+/* ─── RESPONSIVE — 375px ─────────────────────────── */
+@media (max-width: 375px) {
+  .hero-headline { font-size: 28px; letter-spacing: -0.5px; }
 }
 
 /* ─── HERO ICON ENTER ────────────────────────────── */
