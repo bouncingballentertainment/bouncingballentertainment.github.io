@@ -344,6 +344,18 @@ function wireWaitlistForm(formId, msgId, submitBtnId, formLabel) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    const platformInput = form.querySelector('.platform-hidden-input');
+    if (platformInput && !platformInput.value) {
+      const picker = document.querySelector(`.platform-picker[data-form="${form.id}"]`);
+      if (picker) {
+        picker.classList.remove('shake');
+        void picker.offsetWidth;
+        picker.classList.add('shake');
+        picker.addEventListener('animationend', () => picker.classList.remove('shake'), { once: true });
+      }
+      return;
+    }
+
     plausibleEvent('Waitlist_Submit', { form: formLabel });
 
     submitBtn.disabled = true;

@@ -1322,6 +1322,19 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .platform-picker { display: flex; gap: 8px; margin-bottom: 10px; }
 .platform-picker .platform-btn { padding: 8px 18px; font-size: 13px; }
 
+@keyframes platform-shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-6px); }
+  40%       { transform: translateX(6px); }
+  60%       { transform: translateX(-4px); }
+  80%       { transform: translateX(4px); }
+}
+.platform-picker.shake { animation: platform-shake 0.4s ease; }
+.platform-picker.shake .platform-btn {
+  border-color: #ff4d4d !important;
+  box-shadow: 0 0 0 2px rgba(255, 77, 77, 0.35);
+}
+
 /* ─── PREFERS-REDUCED-MOTION ──────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
