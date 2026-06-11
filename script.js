@@ -12,10 +12,12 @@ const TRANSLATIONS = {
     nav_features:'Features', nav_waitlist:'Join Waitlist',
     hero_eyebrow:'Gym Tracker · Android & iOS',
     hero_headline:'You always know<br>what to lift.',
-    hero_sub:'Stop wasting 20 minutes deciding what to lift. Volum plans every session — the exact weight, sets, and reps. Walk in, execute, grow.',
+    hero_sub:'Stop wasting 20 minutes deciding what to lift. Volum plans every session — the exact weight, sets, and reps.',
     hero_proof:'One founder. 157 real sessions. 446,519 lbs tracked.',
     hero_input:'Your email address', hero_btn:'Get Early Access',
-    hero_launch:'Launching 2026. Android & iOS.',
+    hero_launch:'Launching Q3 2026 — Android first.',
+    hero_differentiator:'Most trackers log what you did. Volum tells you what to do next.',
+    waitlist_hint:'Waitlist open · Limited early access spots.',
     features_eyebrow:'Progressive overload, automated',
     features_h2:'Your numbers go up. You don\'t touch the math.',
     features_tagline:'No spreadsheets. No guessing your next weight. No app to fight with.',
@@ -30,7 +32,7 @@ const TRANSLATIONS = {
     feat4_p:'Streaks, PRs, badges. 49 achievements to unlock. Progress you can see and feel. Every milestone earned.',
     vol_eyebrow:'The principle behind the app', vol_h2:'Volume is the engine of progress.',
     vol_body:'Sets × reps × weight. The total volume you move over time is what drives strength gains. Volum exists for one purpose: to grow yours. Every session.',
-    mid_cta_text:'Ready to stop guessing at the gym?', mid_cta_btn:'Join the Waitlist. Free.',
+    mid_cta_text:'Your next session, planned before you walk in.', mid_cta_btn:'Get Early Access. Free.',
     vol_sets:'sets', vol_reps:'reps', vol_weight:'weight', vol_progress:'progress',
     hiw_eyebrow:'The loop', hiw_h2:'Three steps. Every session.',
     step1_h3:'Build your routine', step1_p:'Add the exercises you do. Set your starting weights once. Done.',
@@ -45,13 +47,13 @@ const TRANSLATIONS = {
     mockup_cap1:'Your workouts, always ready', mockup_cap2:'Rest. Breathe. Go again.',
     cta_h2:'Stop guessing. Start growing.',
     cta_p:'Your spot is free. We\'ll ping you the second Volum drops.',
-    cta_btn:'Notify Me on Launch Day',
+    cta_btn:'Get Early Access',
     form_success_hero:'You\'re on the list! We\'ll be in touch.',
     form_success_mid:'You\'re on the list! We\'ll be in touch.',
     form_success_bottom:'You\'re in. We\'ll message you on launch day.',
     form_error:'Something went wrong. Try again.', sending:'Sending…',
     platform_error:'Please select Android or iPhone.',
-    form_privacy:'No credit card. No spam. One email on launch day.',
+    form_privacy:'Free forever. One email when we launch. Unsubscribe anytime.',
     platform_android:'Android', platform_ios:'iPhone',
     form_consent:'By joining you agree to our <a href="https://bouncingballentertainment.github.io/volum-legal/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.',
     testimonials_eyebrow:'Beta Testers',
@@ -72,10 +74,12 @@ const TRANSLATIONS = {
     nav_features:'Funciones', nav_waitlist:'Unirse a la lista de espera',
     hero_eyebrow:'App de Gimnasio · Android & iOS',
     hero_headline:'Siempre sabes<br>cuánto levantar.',
-    hero_sub:'Deja de perder 20 minutos decidiendo qué levantar. Volum planifica cada sesión: el peso exacto, las series y las repeticiones. Entra, ejecuta, crece.',
+    hero_sub:'Deja de perder 20 minutos decidiendo qué levantar. Volum planifica cada sesión: el peso exacto, las series y las repeticiones.',
     hero_proof:'Un fundador. 157 sesiones reales. 446.519 lbs registradas.',
     hero_input:'Tu correo electrónico', hero_btn:'Obtener Acceso Anticipado',
-    hero_launch:'Lanzamiento en 2026. Android & iOS.',
+    hero_launch:'Lanzamiento Q3 2026 — Android primero.',
+    hero_differentiator:'La mayoría de apps registran lo que hiciste. Volum te dice qué hacer después.',
+    waitlist_hint:'Lista de espera abierta · Plazas de acceso anticipado limitadas.',
     features_eyebrow:'Sobrecarga progresiva, automatizada',
     features_h2:'Tus números suben. Tú no haces los cálculos.',
     features_tagline:'Sin hojas de cálculo. Sin adivinar tu próximo peso. Sin complicaciones.',
@@ -90,7 +94,7 @@ const TRANSLATIONS = {
     feat4_p:'Rachas, RPs, medallas. 49 logros por desbloquear. Progreso que puedes ver y sentir. Cada hito ganado.',
     vol_eyebrow:'El principio detrás de la app', vol_h2:'El volumen es el motor del progreso.',
     vol_body:'Series × repeticiones × peso. El volumen total que mueves con el tiempo es lo que impulsa las ganancias de fuerza. Volum existe para un solo propósito: hacer crecer el tuyo. Cada sesión.',
-    mid_cta_text:'¿Listo para dejar de adivinar en el gimnasio?', mid_cta_btn:'Únete a la lista. Es gratis.',
+    mid_cta_text:'Tu próxima sesión, planificada antes de que llegues.', mid_cta_btn:'Obtener acceso anticipado. Gratis.',
     vol_sets:'series', vol_reps:'reps', vol_weight:'peso', vol_progress:'progreso',
     hiw_eyebrow:'El ciclo', hiw_h2:'Tres pasos. Cada sesión.',
     step1_h3:'Construye tu rutina', step1_p:'Añade los ejercicios que haces. Establece tus pesos iniciales una vez. Listo.',
@@ -105,13 +109,13 @@ const TRANSLATIONS = {
     mockup_cap1:'Tus entrenamientos, siempre listos', mockup_cap2:'Descansa. Respira. Vuelve por más.',
     cta_h2:'Deja de adivinar. Empieza a crecer.',
     cta_p:'Tu lugar es gratis. Te avisamos en el momento en que Volum llegue.',
-    cta_btn:'Avísame el día del lanzamiento',
+    cta_btn:'Obtener Acceso Anticipado',
     form_success_hero:'¡Estás en la lista! Estaremos en contacto.',
     form_success_mid:'¡Estás en la lista! Estaremos en contacto.',
     form_success_bottom:'¡Ya estás dentro! Te escribiremos el día del lanzamiento.',
     form_error:'Algo salió mal. Inténtalo de nuevo.', sending:'Enviando…',
     platform_error:'Por favor selecciona Android o iPhone.',
-    form_privacy:'Sin tarjeta. Sin spam. Un correo el día del lanzamiento.',
+    form_privacy:'Gratis para siempre. Un correo cuando lancemos. Cancela cuando quieras.',
     platform_android:'Android', platform_ios:'iPhone',
     form_consent:'Al unirte aceptas nuestra <a href="https://bouncingballentertainment.github.io/volum-legal/privacy-policy.html" target="_blank" rel="noopener">Política de Privacidad</a>.',
     testimonials_eyebrow:'Beta Testers',
@@ -132,10 +136,12 @@ const TRANSLATIONS = {
     nav_features:'Funcionalidades', nav_waitlist:'Entrar na lista de espera',
     hero_eyebrow:'App de Treino · Android & iOS',
     hero_headline:'Você sempre sabe<br>o quanto levantar.',
-    hero_sub:'Pare de perder 20 minutos decidindo o que levantar. Volum planeja cada sessão — o peso exato, séries e repetições. Entre, execute, cresça.',
+    hero_sub:'Pare de perder 20 minutos decidindo o que levantar. Volum planeja cada sessão — o peso exato, séries e repetições.',
     hero_proof:'Um fundador. 157 sessões reais. 446.519 lbs registrados.',
     hero_input:'Seu endereço de e-mail', hero_btn:'Obter Acesso Antecipado',
-    hero_launch:'Lançamento em 2026. Android & iOS.',
+    hero_launch:'Lançamento Q3 2026 — Android primeiro.',
+    hero_differentiator:'A maioria dos apps registra o que você fez. Volum te diz o que fazer a seguir.',
+    waitlist_hint:'Lista aberta · Vagas de acesso antecipado limitadas.',
     features_eyebrow:'Sobrecarga progressiva, automatizada',
     features_h2:'Seus números sobem. Você não precisa fazer as contas.',
     features_tagline:'Sem planilhas. Sem adivinhar seu próximo peso. Sem complicação.',
@@ -150,7 +156,7 @@ const TRANSLATIONS = {
     feat4_p:'Sequências, RPs, emblemas. 49 conquistas para desbloquear. Progresso que você pode ver e sentir. Cada marco conquistado.',
     vol_eyebrow:'O princípio por trás do app', vol_h2:'Volume é o motor do progresso.',
     vol_body:'Séries × repetições × peso. O volume total que você move ao longo do tempo é o que impulsiona os ganhos de força. Volum existe para um único propósito: aumentar o seu. A cada sessão.',
-    mid_cta_text:'Pronto para parar de adivinhar na academia?', mid_cta_btn:'Entre na lista. É grátis.',
+    mid_cta_text:'Sua próxima sessão, planejada antes de você chegar.', mid_cta_btn:'Obter acesso antecipado. Grátis.',
     vol_sets:'séries', vol_reps:'reps', vol_weight:'peso', vol_progress:'progresso',
     hiw_eyebrow:'O ciclo', hiw_h2:'Três passos. A cada sessão.',
     step1_h3:'Monte sua rotina', step1_p:'Adicione os exercícios que você faz. Defina seus pesos iniciais uma vez. Pronto.',
@@ -165,13 +171,13 @@ const TRANSLATIONS = {
     mockup_cap1:'Seus treinos, sempre prontos', mockup_cap2:'Descanse. Respire. Volte mais forte.',
     cta_h2:'Pare de adivinhar. Comece a crescer.',
     cta_p:'Sua vaga é grátis. Te avisamos no segundo em que Volum chegar.',
-    cta_btn:'Me avise no dia do lançamento',
+    cta_btn:'Obter Acesso Antecipado',
     form_success_hero:'Você está na lista! Entraremos em contato.',
     form_success_mid:'Você está na lista! Entraremos em contato.',
     form_success_bottom:'Você está dentro! Vamos te avisar no dia do lançamento.',
     form_error:'Algo deu errado. Tente novamente.', sending:'Enviando…',
     platform_error:'Por favor selecione Android ou iPhone.',
-    form_privacy:'Sem cartão. Sem spam. Um e-mail no dia do lançamento.',
+    form_privacy:'Gratuito para sempre. Um e-mail quando lançarmos. Cancele quando quiser.',
     platform_android:'Android', platform_ios:'iPhone',
     form_consent:'Ao entrar você concorda com nossa <a href="https://bouncingballentertainment.github.io/volum-legal/privacy-policy.html" target="_blank" rel="noopener">Política de Privacidade</a>.',
     testimonials_eyebrow:'Beta Testers',
@@ -357,20 +363,6 @@ function wireWaitlistForm(formId, msgId, submitBtnId, formLabel) {
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-
-    const platformInput = form.querySelector('.platform-hidden-input');
-    if (platformInput && !platformInput.value) {
-      const picker = document.querySelector(`.platform-picker[data-form="${form.id}"]`);
-      if (picker) {
-        picker.classList.remove('shake');
-        void picker.offsetWidth;
-        picker.classList.add('shake');
-        picker.addEventListener('animationend', () => picker.classList.remove('shake'), { once: true });
-      }
-      msgEl.textContent = t('platform_error');
-      msgEl.className   = 'form-message form-error-msg';
-      return;
-    }
 
     plausibleEvent('Waitlist_Submit', { form: formLabel });
 
@@ -614,7 +606,8 @@ function wireShareButton() {
       try { await navigator.share(shareData); } catch { /* dismissed */ }
     } else {
       try {
-        await navigator.clipboard.writeText(window.location.href);
+        const shareText = `Just joined the Volum waitlist — it plans your exact weight, sets, and reps every session. Check it out: ${window.location.origin}`;
+        await navigator.clipboard.writeText(shareText);
         if (copied) {
           copied.style.display = 'block';
           setTimeout(() => { copied.style.display = 'none'; }, 2500);

@@ -510,12 +510,20 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-weight: 600;
   color: var(--text-primary);
   margin-top: 20px;
-  margin-bottom: 28px;
+  margin-bottom: 16px;
   background: rgba(167,255,65,0.06);
   border: 1px solid rgba(167,255,65,0.18);
   border-radius: 8px;
   padding: 10px 14px;
   align-self: flex-start;
+}
+
+.hero-differentiator {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  font-style: italic;
 }
 
 .waitlist-form {
@@ -1039,6 +1047,17 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   flex-wrap: wrap;
 }
 
+.mid-cta-quote {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--text-secondary);
+  border-left: 2px solid var(--accent);
+  padding-left: 12px;
+  margin: 8px 0 0;
+  max-width: 340px;
+}
+.mid-cta-quote cite { font-style: normal; font-weight: 600; color: var(--text-primary); }
+
 .mid-cta-heading {
   font-size: 24px;
   font-weight: 700;
@@ -1241,6 +1260,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .form-consent { font-size: 12px; opacity: 0.9; }
   .mid-cta-inner { flex-direction: column; gap: 20px; }
   .mid-cta-heading { font-size: 20px; max-width: 100%; text-align: center; }
+  .mid-cta-quote { max-width: 100%; text-align: center; border-left: none; border-top: 2px solid var(--accent); padding: 10px 0 0; }
   .mid-cta-right { width: 100%; }
   .mid-cta-form { max-width: 100%; }
 
