@@ -1195,9 +1195,44 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
   .hero { padding-top: 88px; min-height: auto; padding-bottom: 60px; }
   .hero-row { flex-direction: column; gap: 0; padding-bottom: 0; }
-  .hero-phones { margin-top: 24px; }
-  .podium-left, .podium-right { display: none; }
-  .podium-center { width: 270px; transform: none; animation: none; margin: 0 auto; }
+
+  /* ── Podium → swipe carousel ── */
+  .hero-phones { width: 100%; overflow: hidden; margin-top: 24px; }
+  .podium-left, .podium-right { display: block; }
+  .podium-deck {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 10%;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 12px;
+    padding: 20px 10%;
+    align-items: center;
+    perspective: none;
+    justify-content: flex-start;
+  }
+  .podium-deck::-webkit-scrollbar { display: none; }
+  .podium-left,
+  .podium-center,
+  .podium-right {
+    flex-shrink: 0;
+    width: 80%;
+    max-width: none;
+    scroll-snap-align: center;
+    transform: none !important;
+    animation: none;
+    filter: none !important;
+    margin: 0;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    border-color: rgba(255,255,255,0.12);
+  }
+  .podium-center {
+    border-color: rgba(167,255,65,0.4);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.65),
+                0 0 0 1px rgba(167,255,65,0.4),
+                0 0 24px rgba(167,255,65,0.15);
+  }
   .hero-headline { font-size: 40px; letter-spacing: -1px; }
   .hero-sub      { font-size: 16px; }
   .waitlist-form { flex-direction: column; }

@@ -699,6 +699,18 @@ function initPlatformPickers() {
   });
 }
 
+/* ─── PODIUM CAROUSEL (mobile) ───────────────────── */
+
+function initPodiumCarousel() {
+  if (window.innerWidth >= 768) return;
+  const deck   = document.querySelector('.podium-deck');
+  const center = document.querySelector('.podium-center');
+  if (!deck || !center) return;
+  requestAnimationFrame(() => {
+    deck.scrollLeft = center.offsetLeft - (deck.clientWidth - center.clientWidth) / 2;
+  });
+}
+
 /* ─── INIT ───────────────────────────────────────── */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -721,6 +733,7 @@ document.addEventListener('DOMContentLoaded', () => {
   wireShareButton();
   initNavEvents();
 
+  initPodiumCarousel();
   initScrollReveal();
   initFormulaReveal();
   initCountUp();
