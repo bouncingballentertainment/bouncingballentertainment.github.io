@@ -10,7 +10,7 @@ const FETCH_TIMEOUT  = 5000;
 const TRANSLATIONS = {
   en: {
     nav_features:'Features', nav_waitlist:'Join Waitlist',
-    nav_how_it_works:'How It Works', nav_real_results:'Real Results',
+    nav_how_it_works:'How It Works', nav_real_results:'Real Results', nav_testimonials:'Real Feedback',
     hero_eyebrow:'Gym Tracker · Android & iOS',
     hero_headline:'You always know<br>what to lift.',
     hero_sub:'Stop wasting 20 minutes deciding what to lift. Volum plans every session: the exact weight, sets, and reps.',
@@ -73,7 +73,7 @@ const TRANSLATIONS = {
   },
   es: {
     nav_features:'Funciones', nav_waitlist:'Unirse a la lista de espera',
-    nav_how_it_works:'Cómo Funciona', nav_real_results:'Resultados Reales',
+    nav_how_it_works:'Cómo Funciona', nav_real_results:'Resultados Reales', nav_testimonials:'Opiniones Reales',
     hero_eyebrow:'App de Gimnasio · Android & iOS',
     hero_headline:'Siempre sabes<br>cuánto levantar.',
     hero_sub:'Deja de perder 20 minutos decidiendo qué levantar. Volum planifica cada sesión: el peso exacto, las series y las repeticiones.',
@@ -136,7 +136,7 @@ const TRANSLATIONS = {
   },
   pt: {
     nav_features:'Funcionalidades', nav_waitlist:'Entrar na lista de espera',
-    nav_how_it_works:'Como Funciona', nav_real_results:'Resultados Reais',
+    nav_how_it_works:'Como Funciona', nav_real_results:'Resultados Reais', nav_testimonials:'Feedback Real',
     hero_eyebrow:'App de Treino · Android & iOS',
     hero_headline:'Você sempre sabe<br>o quanto levantar.',
     hero_sub:'Pare de perder 20 minutos decidindo o que levantar. Volum planeja cada sessão: o peso exato, séries e repetições.',

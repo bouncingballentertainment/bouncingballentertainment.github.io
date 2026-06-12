@@ -1255,6 +1255,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
                 0 0 24px rgba(167,255,65,0.15);
     aspect-ratio: 9 / 19;
   }
+  .podium-card.active {
+    border-color: rgba(167,255,65,0.70) !important;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.65),
+                0 0 0 1px rgba(167,255,65,0.60),
+                0 0 32px rgba(167,255,65,0.25) !important;
+  }
   .hero-headline { font-size: 40px; letter-spacing: -1px; }
   .hero-sub      { font-size: 16px; }
   .waitlist-form { flex-direction: column; }
