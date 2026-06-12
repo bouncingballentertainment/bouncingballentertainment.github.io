@@ -446,7 +446,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .podium-card:hover .showcase-overlay,
-.podium-card:focus-visible .showcase-overlay { transform: translateY(0); }
+.podium-card:focus-visible .showcase-overlay,
+.podium-card.active .showcase-overlay { transform: translateY(0); }
 
 .podium-card .showcase-overlay h3 {
   font-size: 14px;
@@ -784,7 +785,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-size: 64px;
   font-weight: 800;
   color: var(--accent);
-  opacity: 0.12;
+  opacity: 0.30;
+  text-shadow: 0 0 32px rgba(167,255,65,0.45);
   line-height: 1;
   margin-bottom: -12px;
   font-variant-numeric: tabular-nums;
@@ -807,8 +809,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* ─── ACTIVE STEP (loop cycle) ───────────────────── */
 .step.loop-active .step-number {
-  opacity: 0.35;
-  text-shadow: 0 0 40px rgba(167,255,65,0.4);
+  opacity: 0.60;
+  text-shadow: 0 0 50px rgba(167,255,65,0.70);
 }
 
 .step.loop-active .step-dot {
@@ -1251,6 +1253,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     box-shadow: 0 12px 32px rgba(0,0,0,0.65),
                 0 0 0 1px rgba(167,255,65,0.4),
                 0 0 24px rgba(167,255,65,0.15);
+    aspect-ratio: 9 / 19;
   }
   .hero-headline { font-size: 40px; letter-spacing: -1px; }
   .hero-sub      { font-size: 16px; }
@@ -1277,7 +1280,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .steps-grid::before { display: none; }
   .step-number { font-size: 44px; margin-bottom: -8px; }
 
-  .stats-grid { gap: 40px; }
+  .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .stat-number { font-size: 36px; }
 
   .showcase-deck {
@@ -1308,7 +1311,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .hero-headline { font-size: 34px; }
 
   .showcase-deck { gap: 10px; }
-  .stats-grid { gap: 32px; }
+  .stats-grid { gap: 20px; }
   .waitlist-form-large { width: 100%; }
 
 }
@@ -1403,6 +1406,19 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .platform-picker.shake .platform-btn {
   border-color: #ff4d4d !important;
   box-shadow: 0 0 0 2px rgba(255, 77, 77, 0.35);
+}
+
+/* ─── READABILITY ─────────────────────────────────── */
+.hero-sub,
+.feature-card p,
+.testimonial-quote,
+.volume-body,
+.step p,
+.section-sub,
+.features-ai-callout p {
+  text-align: justify;
+  word-spacing: 0.05em;
+  line-height: 1.85;
 }
 
 /* ─── PREFERS-REDUCED-MOTION ──────────────────────── */

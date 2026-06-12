@@ -10,16 +10,17 @@ const FETCH_TIMEOUT  = 5000;
 const TRANSLATIONS = {
   en: {
     nav_features:'Features', nav_waitlist:'Join Waitlist',
+    nav_how_it_works:'How It Works', nav_real_results:'Real Results',
     hero_eyebrow:'Gym Tracker · Android & iOS',
     hero_headline:'You always know<br>what to lift.',
-    hero_sub:'Stop wasting 20 minutes deciding what to lift. Volum plans every session — the exact weight, sets, and reps.',
+    hero_sub:'Stop wasting 20 minutes deciding what to lift. Volum plans every session: the exact weight, sets, and reps.',
     hero_proof:'One founder. 157 real sessions. 446,519 lbs tracked.',
     hero_input:'Your email address', hero_btn:'Get Early Access',
     hero_launch:'Launching Q3 2026.',
     hero_differentiator:'Most trackers log what you did. Volum tells you what to do next.',
     waitlist_hint:'Waitlist open · Limited early access spots.',
     features_eyebrow:'Progressive overload, automated',
-    features_h2:'Your numbers go up. You don\'t touch the math.',
+    features_h2:'Every session, Volum updates your weights and reps for you. You never have to do the math.',
     features_tagline:'No spreadsheets. No guessing your next weight. No app to fight with.',
     features_ai:'Analyzes your training history and tells you exactly what weight to add today. Works from your very first session.',
     feat1_h3:'Always know your session',
@@ -72,6 +73,7 @@ const TRANSLATIONS = {
   },
   es: {
     nav_features:'Funciones', nav_waitlist:'Unirse a la lista de espera',
+    nav_how_it_works:'Cómo Funciona', nav_real_results:'Resultados Reales',
     hero_eyebrow:'App de Gimnasio · Android & iOS',
     hero_headline:'Siempre sabes<br>cuánto levantar.',
     hero_sub:'Deja de perder 20 minutos decidiendo qué levantar. Volum planifica cada sesión: el peso exacto, las series y las repeticiones.',
@@ -81,7 +83,7 @@ const TRANSLATIONS = {
     hero_differentiator:'La mayoría de apps registran lo que hiciste. Volum te dice qué hacer después.',
     waitlist_hint:'Lista de espera abierta · Plazas de acceso anticipado limitadas.',
     features_eyebrow:'Sobrecarga progresiva, automatizada',
-    features_h2:'Tus números suben. Tú no haces los cálculos.',
+    features_h2:'Cada sesión, Volum actualiza tus pesos y repeticiones por ti. Nunca tendrás que hacer los cálculos.',
     features_tagline:'Sin hojas de cálculo. Sin adivinar tu próximo peso. Sin complicaciones.',
     features_ai:'Analiza tu historial de entrenamiento y te dice exactamente cuánto peso añadir hoy. Funciona desde tu primera sesión.',
     feat1_h3:'Tu sesión, siempre planificada',
@@ -134,16 +136,17 @@ const TRANSLATIONS = {
   },
   pt: {
     nav_features:'Funcionalidades', nav_waitlist:'Entrar na lista de espera',
+    nav_how_it_works:'Como Funciona', nav_real_results:'Resultados Reais',
     hero_eyebrow:'App de Treino · Android & iOS',
     hero_headline:'Você sempre sabe<br>o quanto levantar.',
-    hero_sub:'Pare de perder 20 minutos decidindo o que levantar. Volum planeja cada sessão — o peso exato, séries e repetições.',
+    hero_sub:'Pare de perder 20 minutos decidindo o que levantar. Volum planeja cada sessão: o peso exato, séries e repetições.',
     hero_proof:'Um fundador. 157 sessões reais. 446.519 lbs registrados.',
     hero_input:'Seu endereço de e-mail', hero_btn:'Obter Acesso Antecipado',
     hero_launch:'Lançamento Q3 2026.',
     hero_differentiator:'A maioria dos apps registra o que você fez. Volum te diz o que fazer a seguir.',
     waitlist_hint:'Lista aberta · Vagas de acesso antecipado limitadas.',
     features_eyebrow:'Sobrecarga progressiva, automatizada',
-    features_h2:'Seus números sobem. Você não precisa fazer as contas.',
+    features_h2:'A cada sessão, o Volum atualiza seus pesos e repetições por você. Você nunca precisa fazer as contas.',
     features_tagline:'Sem planilhas. Sem adivinhar seu próximo peso. Sem complicação.',
     features_ai:'Analisa seu histórico de treino e diz exatamente quanto peso adicionar hoje. Funciona desde a sua primeira sessão.',
     feat1_h3:'Sua sessão, sempre pronta',
@@ -699,9 +702,26 @@ function initPodiumCarousel() {
   const deck   = document.querySelector('.podium-deck');
   const center = document.querySelector('.podium-center');
   if (!deck || !center) return;
+
+  const cards = deck.querySelectorAll('.podium-card');
+
+  function updateActive() {
+    const deckMid = deck.getBoundingClientRect().left + deck.clientWidth / 2;
+    let closest = null, minDist = Infinity;
+    cards.forEach(card => {
+      const r = card.getBoundingClientRect();
+      const dist = Math.abs(r.left + r.width / 2 - deckMid);
+      if (dist < minDist) { minDist = dist; closest = card; }
+    });
+    cards.forEach(card => card.classList.toggle('active', card === closest));
+  }
+
   requestAnimationFrame(() => {
     deck.scrollLeft = center.offsetLeft - (deck.clientWidth - center.clientWidth) / 2;
+    updateActive();
   });
+
+  deck.addEventListener('scroll', updateActive, { passive: true });
 }
 
 /* ─── INIT ───────────────────────────────────────── */
