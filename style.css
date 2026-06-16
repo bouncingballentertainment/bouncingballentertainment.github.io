@@ -407,34 +407,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   box-shadow: 4px 24px 52px rgba(0,0,0,0.55);
 }
 
-.podium-left:hover,
-.podium-left:focus-visible {
-  transform: rotateY(4deg) translateX(10px) scale(1.03);
-  filter: brightness(0.92);
-  z-index: 10;
-  box-shadow: 0 28px 60px rgba(0,0,0,0.7), 0 0 0 1px var(--accent);
-  border-color: rgba(167,255,65,0.5);
-  outline: none;
-}
-
-.podium-right:hover,
-.podium-right:focus-visible {
-  transform: rotateY(-4deg) translateX(-10px) scale(1.03);
-  filter: brightness(0.92);
-  z-index: 10;
-  box-shadow: 0 28px 60px rgba(0,0,0,0.7), 0 0 0 1px var(--accent);
-  border-color: rgba(167,255,65,0.5);
-  outline: none;
-}
-
-.podium-center:hover,
-.podium-center:focus-visible {
-  transform: translateY(-36px) scale(1.06);
-  box-shadow: 0 44px 84px rgba(0,0,0,0.8),
-              0 0 0 1px var(--accent),
-              0 0 68px rgba(167,255,65,0.32);
-  outline: none;
-}
 
 .podium-card .showcase-overlay {
   position: absolute;
@@ -445,8 +417,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: transform 300ms ease;
 }
 
-.podium-card:hover .showcase-overlay,
-.podium-card:focus-visible .showcase-overlay,
 .podium-card.active .showcase-overlay { transform: translateY(0); }
 
 .podium-card .showcase-overlay h3 {
@@ -460,6 +430,26 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-size: 13px;
   color: var(--text-secondary);
   line-height: 1.5;
+}
+
+/* Desktop: the .active class is only toggled by the mobile carousel, so
+   reveal captions here on hover, with the center card shown by default.
+   Hovering a card flattens it, brightens it, and zooms it forward. */
+@media (min-width: 768px) {
+  .podium-card.podium-center .showcase-overlay,
+  .podium-card:hover .showcase-overlay { transform: translateY(0); }
+
+  .podium-card:hover { filter: brightness(1); z-index: 6; }
+  .podium-left:hover {
+    transform: rotateY(0) translateX(0) translateY(-12px) scale(1.08);
+  }
+  .podium-right:hover {
+    transform: rotateY(0) translateX(0) translateY(-12px) scale(1.08);
+  }
+  .podium-center:hover {
+    transform: translateY(-32px) scale(1.05);
+    animation-play-state: paused;
+  }
 }
 
 .hero-phone {
@@ -1077,7 +1067,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .mid-cta-form {
   max-width: 460px;
   margin-bottom: 0;
+  flex-direction: column;
+  align-items: stretch;
 }
+.mid-cta-form .waitlist-input { width: 100%; }
+.mid-cta-form .btn { width: 100%; }
 
 /* ─── WAITLIST CTA ────────────────────────────────── */
 .waitlist-section {
@@ -1249,10 +1243,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     border-color: rgba(255,255,255,0.12);
   }
   .podium-center {
-    border-color: rgba(167,255,65,0.4);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.65),
-                0 0 0 1px rgba(167,255,65,0.4),
-                0 0 24px rgba(167,255,65,0.15);
     aspect-ratio: 9 / 19;
   }
   .podium-card.active {
