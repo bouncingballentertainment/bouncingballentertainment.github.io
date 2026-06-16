@@ -52,6 +52,22 @@ const TRANSLATIONS = {
     showcase2_p:'Streak, weekly volume, PRs, and all your routines on one screen.',
     showcase3_h3:'Volume that only goes up',
     showcase3_p:'446,519 lbs tracked. Every session adds to the curve.',
+    faq_eyebrow:'Questions & answers',
+    faq_h2:'Frequently asked questions',
+    faq_q1:'What app tells you exactly how much weight to lift?',
+    faq_a1:'Volum tells you the exact weight, sets, and reps for every exercise before you start. It analyzes your training history and uses an AI Coach to apply progressive overload automatically, so you never have to guess your next weight at the gym.',
+    faq_q2:'What is the best app for progressive overload?',
+    faq_a2:'Volum is built specifically for progressive overload. Instead of only logging what you did, it plans your next session, increasing weight, reps, or sets automatically based on your performance, so your training volume keeps climbing week after week.',
+    faq_q3:'How do I know when to increase weight at the gym?',
+    faq_a3:'A simple rule: increase the weight once you can complete all your planned sets and reps with one or two reps left in reserve. Volum tracks this for you and tells you exactly when and how much to add each session.',
+    faq_q4:'How is Volum different from other workout trackers?',
+    faq_a4:'Most trackers only log what you already did. Volum is a workout planner: it tells you what to do next. Every session\'s weight, sets, and reps are calculated for you in advance, then logged as you train, with no spreadsheets and no guessing.',
+    faq_q5:'How much weight should I add each week?',
+    faq_a5:'For most lifts, adding roughly 2.5 to 5 percent once you hit your rep targets is a sustainable rate of progression. The right amount depends on the exercise and your recovery, so Volum calculates it per exercise to keep each jump small enough to progress safely.',
+    faq_q6:'Is Volum free, and what platforms does it support?',
+    faq_a6:'Yes. Volum is a free workout tracker for Android and iOS, launching Q3 2026. Join the waitlist to get early access and a single email on launch day, with no credit card required.',
+    faq_q7:'What does training volume mean in weightlifting?',
+    faq_a7:'Training volume is sets times reps times weight, the total amount of work you move over time. It is a primary driver of muscle and strength gains. Volum tracks your volume every session and grows it gradually through automatic progressive overload.',
     cta_h2:'Stop guessing. Start growing.',
     cta_p:'Your spot is free. We\'ll ping you the second Volum drops.',
     cta_btn:'Get Early Access',
@@ -62,7 +78,7 @@ const TRANSLATIONS = {
     platform_error:'Please select Android or iPhone.',
     form_privacy:'One email when we launch. Unsubscribe anytime.',
     platform_android:'Android', platform_ios:'iPhone',
-    form_consent:'By joining you agree to our <a href="https://bouncingballentertainment.github.io/volum-legal/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.',
+    form_consent:'I agree to receive a launch-day email from Volum and accept the <a href="https://bouncingballentertainment.github.io/volum-legal/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.',
     testimonials_eyebrow:'Beta Testers',
     testimonials_h2:'Real people. Real training.',
     testimonial1_quote:'"Volum has great functionality and is super easy to organise your workouts. It has a solid AI progression system that helps track when to increase weights and reps, and everything is fully adjustable: sets, weight, rest time, all of it."',
@@ -121,6 +137,22 @@ const TRANSLATIONS = {
     showcase2_p:'Racha, volumen semanal, RPs y todas tus rutinas en una sola pantalla.',
     showcase3_h3:'Volumen que solo sube',
     showcase3_p:'446.519 lbs registradas. Cada sesión suma a la curva.',
+    faq_eyebrow:'Preguntas y respuestas',
+    faq_h2:'Preguntas frecuentes',
+    faq_q1:'¿Qué app te dice exactamente cuánto peso levantar?',
+    faq_a1:'Volum te indica el peso, las series y las repeticiones exactas de cada ejercicio antes de empezar. Analiza tu historial de entrenamiento y aplica la sobrecarga progresiva automáticamente con su AI Coach, para que nunca tengas que adivinar tu próximo peso.',
+    faq_q2:'¿Cuál es la mejor app para sobrecarga progresiva?',
+    faq_a2:'Volum está hecho específicamente para la sobrecarga progresiva. En lugar de solo registrar lo que hiciste, planifica tu próxima sesión, aumentando peso, repeticiones o series automáticamente según tu rendimiento, para que tu volumen siga subiendo semana tras semana.',
+    faq_q3:'¿Cómo saber cuándo subir el peso en el gimnasio?',
+    faq_a3:'Una regla simple: aumenta el peso cuando completes todas las series y repeticiones planificadas dejando una o dos repeticiones en reserva. Volum lo controla por ti y te dice exactamente cuándo y cuánto añadir en cada sesión.',
+    faq_q4:'¿En qué se diferencia Volum de otras apps de entrenamiento?',
+    faq_a4:'La mayoría de las apps solo registran lo que ya hiciste. Volum es un planificador: te dice qué hacer a continuación. Calcula el peso, las series y las repeticiones de cada sesión por adelantado y las registra mientras entrenas, sin hojas de cálculo.',
+    faq_q5:'¿Cuánto peso debo añadir cada semana?',
+    faq_a5:'Para la mayoría de los ejercicios, añadir alrededor del 2,5 a 5 por ciento al alcanzar tus repeticiones objetivo es un ritmo sostenible. La cantidad ideal depende del ejercicio y tu recuperación, así que Volum la calcula por ejercicio para que cada aumento sea seguro.',
+    faq_q6:'¿Volum es gratis y en qué plataformas está disponible?',
+    faq_a6:'Sí. Volum es una app de entrenamiento gratuita para Android e iOS, con lanzamiento en el Q3 de 2026. Únete a la lista de espera para obtener acceso anticipado y un único correo el día del lanzamiento, sin tarjeta de crédito.',
+    faq_q7:'¿Qué significa el volumen en el entrenamiento con pesas?',
+    faq_a7:'El volumen de entrenamiento es el total de series, repeticiones y peso — todo el trabajo que mueves a lo largo del tiempo. Es uno de los principales motores de las ganancias de fuerza y músculo. Volum mide tu volumen en cada sesión y lo aumenta de forma gradual.',
     cta_h2:'Deja de adivinar. Empieza a crecer.',
     cta_p:'Tu lugar es gratis. Te avisamos en el momento en que Volum llegue.',
     cta_btn:'Obtener Acceso Anticipado',
@@ -131,7 +163,7 @@ const TRANSLATIONS = {
     platform_error:'Por favor selecciona Android o iPhone.',
     form_privacy:'Un correo cuando lancemos. Cancela cuando quieras.',
     platform_android:'Android', platform_ios:'iPhone',
-    form_consent:'Al unirte aceptas nuestra <a href="https://bouncingballentertainment.github.io/volum-legal/privacy-policy.html" target="_blank" rel="noopener">Política de Privacidad</a>.',
+    form_consent:'Acepto recibir un correo de lanzamiento de Volum y la <a href="https://bouncingballentertainment.github.io/volum-legal/privacy-policy.html" target="_blank" rel="noopener">Política de Privacidad</a>.',
     testimonials_eyebrow:'Beta Testers',
     testimonials_h2:'Personas reales. Entrenamiento real.',
     testimonial1_quote:'"Volum tiene una gran funcionalidad y es muy fácil de organizar los entrenamientos. Tiene una buena progresión por IA que ayuda a saber cuándo aumentar cargas y repeticiones, y todo es totalmente ajustable: series, peso, tiempo de descanso y mucho más."',
@@ -190,6 +222,22 @@ const TRANSLATIONS = {
     showcase2_p:'Sequência, volume semanal, recordes e todas as suas rotinas em uma tela.',
     showcase3_h3:'Volume que só aumenta',
     showcase3_p:'446.519 lbs registrados. Cada sessão soma à curva.',
+    faq_eyebrow:'Perguntas e respostas',
+    faq_h2:'Perguntas frequentes',
+    faq_q1:'Qual app diz exatamente quanto peso levantar?',
+    faq_a1:'O Volum mostra o peso, as séries e as repetições exatas de cada exercício antes de você começar. Ele analisa seu histórico de treino e aplica a sobrecarga progressiva automaticamente com o AI Coach, para você nunca precisar adivinhar o próximo peso.',
+    faq_q2:'Qual é o melhor app para sobrecarga progressiva?',
+    faq_a2:'O Volum foi feito especificamente para a sobrecarga progressiva. Em vez de apenas registrar o que você fez, ele planeja sua próxima sessão, aumentando peso, repetições ou séries automaticamente conforme seu desempenho, para seu volume crescer semana após semana.',
+    faq_q3:'Como saber quando aumentar a carga no treino?',
+    faq_a3:'Uma regra simples: aumente a carga quando conseguir completar todas as séries e repetições planejadas deixando uma ou duas repetições de reserva. O Volum acompanha isso por você e diz exatamente quando e quanto adicionar em cada sessão.',
+    faq_q4:'Como o Volum é diferente de outros apps de treino?',
+    faq_a4:'A maioria dos apps só registra o que você já fez. O Volum é um planejador: ele diz o que fazer a seguir. Calcula o peso, as séries e as repetições de cada sessão com antecedência e registra enquanto você treina, sem planilhas.',
+    faq_q5:'Quanto peso devo adicionar por semana?',
+    faq_a5:'Para a maioria dos exercícios, adicionar cerca de 2,5 a 5 por cento ao atingir suas repetições-alvo é um ritmo sustentável. O valor ideal depende do exercício e da sua recuperação, então o Volum calcula por exercício para que cada aumento seja seguro.',
+    faq_q6:'O Volum é gratuito e em quais plataformas funciona?',
+    faq_a6:'Sim. O Volum é um app de treino gratuito para Android e iOS, com lançamento no Q3 de 2026. Entre na lista de espera para ter acesso antecipado e um único e-mail no dia do lançamento, sem cartão de crédito.',
+    faq_q7:'O que significa volume no treino de musculação?',
+    faq_a7:'Volume de treino é o total de séries, repetições e peso — todo o trabalho que você move ao longo do tempo. É um dos principais motores dos ganhos de força e músculo. O Volum mede seu volume em cada sessão e o aumenta gradualmente.',
     cta_h2:'Pare de adivinhar. Comece a crescer.',
     cta_p:'Sua vaga é grátis. Te avisamos no segundo em que Volum chegar.',
     cta_btn:'Obter Acesso Antecipado',
@@ -200,7 +248,7 @@ const TRANSLATIONS = {
     platform_error:'Por favor selecione Android ou iPhone.',
     form_privacy:'Um e-mail quando lançarmos. Cancele quando quiser.',
     platform_android:'Android', platform_ios:'iPhone',
-    form_consent:'Ao entrar você concorda com nossa <a href="https://bouncingballentertainment.github.io/volum-legal/privacy-policy.html" target="_blank" rel="noopener">Política de Privacidade</a>.',
+    form_consent:'Concordo em receber um e-mail de lançamento da Volum e aceito a <a href="https://bouncingballentertainment.github.io/volum-legal/privacy-policy.html" target="_blank" rel="noopener">Política de Privacidade</a>.',
     testimonials_eyebrow:'Beta Testers',
     testimonials_h2:'Pessoas reais. Treino real.',
     testimonial1_quote:'"Volum tem ótima funcionalidade e é super fácil de organizar o treino. Tem uma boa linha de progressão por IA, o que ajuda a saber quando evoluir em cargas e repetições, e tem um sistema inteiramente regulável: séries, peso, tempo de descanso e tudo mais."',
@@ -302,19 +350,33 @@ function initLangPicker() {
     btn.setAttribute('aria-expanded', 'false');
   });
 
+  function selectLang(lang) {
+    plausibleEvent('Language_Changed', { language: lang });
+    try { localStorage.setItem('volum_lang', lang); } catch (e) {}
+    dropdown.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+
+    // Navigate to the language's canonical URL so the address bar, OG tags,
+    // and shareable link all match. Switch in place if already on that page.
+    const paths = { en: '/', es: '/es/', pt: '/pt/' };
+    const p = window.location.pathname;
+    const current = p.indexOf('/pt') === 0 ? 'pt' : p.indexOf('/es') === 0 ? 'es' : 'en';
+    if (paths[lang] && lang !== current) {
+      window.location.href = paths[lang];
+      return;
+    }
+    applyLanguage(lang);
+  }
+
   document.querySelectorAll('[data-lang]').forEach(el => {
     el.addEventListener('click', e => {
       e.stopPropagation();
-      applyLanguage(el.dataset.lang);
-      plausibleEvent('Language_Changed', { language: el.dataset.lang });
-      dropdown.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
+      selectLang(el.dataset.lang);
     });
     el.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        applyLanguage(el.dataset.lang);
-        dropdown.classList.remove('open');
+        selectLang(el.dataset.lang);
       }
     });
   });
@@ -372,6 +434,21 @@ function captureUTM(fieldId) {
   field.value = params.get('utm_source') || 'direct';
 }
 
+// Inject the remaining UTM parameters as hidden inputs so campaign reporting
+// (medium/campaign/term/content) is captured, not just the source.
+function injectUTMFields(form) {
+  if (!form) return;
+  const params = new URLSearchParams(window.location.search);
+  ['utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(name => {
+    if (form.querySelector('[name="' + name + '"]')) return;
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = name;
+    input.value = params.get(name) || '';
+    form.appendChild(input);
+  });
+}
+
 /* ─── WAITLIST FORM ──────────────────────────────── */
 
 function wireWaitlistForm(formId, msgId, submitBtnId, formLabel) {
@@ -379,6 +456,8 @@ function wireWaitlistForm(formId, msgId, submitBtnId, formLabel) {
   const msgEl   = document.getElementById(msgId);
   const submitBtn = document.getElementById(submitBtnId);
   if (!form || !msgEl || !submitBtn) return;
+
+  injectUTMFields(form);
 
   const originalBtnText = submitBtn.textContent;
 

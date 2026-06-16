@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Volum: Free Workout Tracker App · Progressive Overload Made Simple</title>
-  <meta name="description" content="Know exactly what to lift every session. Volum plans your workout: weight, sets, and reps. Your volume grows automatically. Free gym log app for Android & iOS, launching 2026.">
+  <meta name="description" content="Know exactly what to lift every session. Volum plans your workout: weight, sets, and reps. Your volume grows automatically. Free gym log app for Android & iOS, launching Q3 2026.">
 
   <meta property="og:title"       content="Volum: Free Workout Tracker App">
   <meta property="og:description" content="Know exactly what to lift every session. Volum plans your workout so your volume grows automatically.">
@@ -23,8 +23,9 @@
 
   <link rel="preload" as="image" href="assets/hero-bg.png">
 
-  <script defer data-domain="bouncingballentertainment.github.io/volum-website"
+  <script defer data-domain="app-volum.com"
           src="https://plausible.io/js/script.js"></script>
+  <script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script>
 
   <script type="application/ld+json">
   {
@@ -40,9 +41,53 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What app tells you exactly how much weight to lift?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Volum tells you the exact weight, sets, and reps for every exercise before you start. It analyzes your training history and uses an AI Coach to apply progressive overload automatically, so you never have to guess your next weight at the gym." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best app for progressive overload?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Volum is built specifically for progressive overload. Instead of only logging what you did, it plans your next session, increasing weight, reps, or sets automatically based on your performance, so your training volume keeps climbing week after week." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I know when to increase weight at the gym?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A simple rule: increase the weight once you can complete all your planned sets and reps with one or two reps left in reserve. Volum tracks this for you and tells you exactly when and how much to add each session." }
+      },
+      {
+        "@type": "Question",
+        "name": "How is Volum different from other workout trackers?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Most trackers only log what you already did. Volum is a workout planner: it tells you what to do next. Every session's weight, sets, and reps are calculated for you in advance, then logged as you train, with no spreadsheets and no guessing." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much weight should I add each week?",
+        "acceptedAnswer": { "@type": "Answer", "text": "For most lifts, adding roughly 2.5 to 5 percent once you hit your rep targets is a sustainable rate of progression. The right amount depends on the exercise and your recovery, so Volum calculates it per exercise to keep each jump small enough to progress safely." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Volum free, and what platforms does it support?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Volum is a free workout tracker for Android and iOS, launching Q3 2026. Join the waitlist to get early access and a single email on launch day, with no credit card required." }
+      },
+      {
+        "@type": "Question",
+        "name": "What does training volume mean in weightlifting?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Training volume is sets times reps times weight, the total amount of work you move over time. It is a primary driver of muscle and strength gains. Volum tracks your volume every session and grows it gradually through automatic progressive overload." }
+      }
+    ]
+  }
+  </script>
+
   <meta name="theme-color" content="#0A121E">
   <link rel="icon" href="assets/icon.png">
-  <link rel="stylesheet" href="style.css?v=1.7">
+  <link rel="stylesheet" href="style.css?v=1.9">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.rel='stylesheet'">
@@ -117,11 +162,14 @@
                  required autocomplete="email">
           <button class="btn btn-accent" type="submit" id="hero-submit-btn"
                   data-i18n="hero_btn">Get Early Access</button>
+          <label class="form-consent-check">
+            <input type="checkbox" name="consent" value="I agree to receive launch emails and accept the Privacy Policy" required>
+            <span data-i18n-html="form_consent">I agree to receive a launch-day email from Volum and accept the <a href="https://bouncingballentertainment.github.io/volum-legal/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.</span>
+          </label>
         </form>
         <p class="form-privacy" data-i18n="form_privacy">No credit card. No spam. One email on launch day.</p>
-        <p class="form-consent" data-i18n-html="form_consent">By joining you agree to our <a href="https://bouncingballentertainment.github.io/volum-legal/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.</p>
         <p class="form-message" id="hero-form-msg" aria-live="polite"></p>
-        <p class="hero-launch" data-i18n="hero_launch">Launching 2026. Android & iOS.</p>
+        <p class="hero-launch" data-i18n="hero_launch">Launching Q3 2026. Android & iOS.</p>
       </div>
 
       <div class="hero-phones" aria-label="App screenshots">
@@ -347,10 +395,13 @@
                    required autocomplete="email">
             <button class="btn btn-accent" type="submit" id="mid-submit-btn"
                     data-i18n="hero_btn">Get Early Access</button>
+            <label class="form-consent-check">
+              <input type="checkbox" name="consent" value="I agree to receive launch emails and accept the Privacy Policy" required>
+              <span data-i18n-html="form_consent">I agree to receive a launch-day email from Volum and accept the <a href="https://bouncingballentertainment.github.io/volum-legal/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.</span>
+            </label>
           </form>
           <p class="form-privacy" data-i18n="form_privacy">No credit card. No spam. One email on launch day.</p>
-          <p class="form-consent" data-i18n-html="form_consent">By joining you agree to our <a href="https://bouncingballentertainment.github.io/volum-legal/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.</p>
-          <p class="form-message" id="mid-form-msg" aria-live="polite"></p>
+            <p class="form-message" id="mid-form-msg" aria-live="polite"></p>
         </div>
       </div>
     </div>
@@ -403,6 +454,44 @@
     </div>
   </section>
 
+  <!-- ════════════════════════════════ FAQ ═════════════════════════════════ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <p class="eyebrow" data-i18n="faq_eyebrow">Questions & answers</p>
+      <h2 data-i18n="faq_h2">Frequently asked questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary data-i18n="faq_q1">What app tells you exactly how much weight to lift?</summary>
+          <p class="faq-answer" data-i18n="faq_a1">Volum tells you the exact weight, sets, and reps for every exercise before you start. It analyzes your training history and uses an AI Coach to apply progressive overload automatically, so you never have to guess your next weight at the gym.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq_q2">What is the best app for progressive overload?</summary>
+          <p class="faq-answer" data-i18n="faq_a2">Volum is built specifically for progressive overload. Instead of only logging what you did, it plans your next session, increasing weight, reps, or sets automatically based on your performance, so your training volume keeps climbing week after week.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq_q3">How do I know when to increase weight at the gym?</summary>
+          <p class="faq-answer" data-i18n="faq_a3">A simple rule: increase the weight once you can complete all your planned sets and reps with one or two reps left in reserve. Volum tracks this for you and tells you exactly when and how much to add each session.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq_q4">How is Volum different from other workout trackers?</summary>
+          <p class="faq-answer" data-i18n="faq_a4">Most trackers only log what you already did. Volum is a workout planner: it tells you what to do next. Every session's weight, sets, and reps are calculated for you in advance, then logged as you train, with no spreadsheets and no guessing.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq_q5">How much weight should I add each week?</summary>
+          <p class="faq-answer" data-i18n="faq_a5">For most lifts, adding roughly 2.5 to 5 percent once you hit your rep targets is a sustainable rate of progression. The right amount depends on the exercise and your recovery, so Volum calculates it per exercise to keep each jump small enough to progress safely.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq_q6">Is Volum free, and what platforms does it support?</summary>
+          <p class="faq-answer" data-i18n="faq_a6">Yes. Volum is a free workout tracker for Android and iOS, launching Q3 2026. Join the waitlist to get early access and a single email on launch day, with no credit card required.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq_q7">What does training volume mean in weightlifting?</summary>
+          <p class="faq-answer" data-i18n="faq_a7">Training volume is sets times reps times weight, the total amount of work you move over time. It is a primary driver of muscle and strength gains. Volum tracks your volume every session and grows it gradually through automatic progressive overload.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <!-- ════════════════════════════ WAITLIST CTA ════════════════════════════ -->
   <section class="waitlist-section" id="waitlist">
     <div class="container waitlist-inner">
@@ -423,9 +512,13 @@
                required autocomplete="email">
         <button class="btn btn-accent" type="submit" id="bottom-submit-btn"
                 data-i18n="cta_btn">Notify Me on Launch Day</button>
+        <label class="form-consent-check">
+          <input type="checkbox" name="consent" value="I agree to receive launch emails and accept the Privacy Policy" required>
+          <span data-i18n-html="form_consent">I agree to receive a launch-day email from Volum and accept the <a href="https://bouncingballentertainment.github.io/volum-legal/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.</span>
+        </label>
       </form>
       <p class="form-privacy" data-i18n="form_privacy">No credit card. No spam. One email on launch day.</p>
-      <p class="form-consent" data-i18n-html="form_consent">By joining you agree to our <a href="https://bouncingballentertainment.github.io/volum-legal/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.</p>
+      <!-- consent moved into form as required opt-in checkbox -->
       <p class="form-message" id="bottom-form-msg" aria-live="polite"></p>
       <div class="share-nudge" id="share-nudge" style="display:none;">
         <span data-i18n="share_nudge">Know someone who lifts?</span>
@@ -472,6 +565,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=1.7"></script>
+  <script src="script.js?v=1.9"></script>
 </body>
 </html>

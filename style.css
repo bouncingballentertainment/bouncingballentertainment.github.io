@@ -519,6 +519,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .waitlist-form {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   max-width: 460px;
   margin-bottom: 16px;
@@ -559,6 +560,31 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .form-consent a { color: var(--text-muted); text-decoration: underline; }
 .form-consent a:hover { color: var(--accent); }
+
+/* Required opt-in consent checkbox (GDPR). Full-width row within the form,
+   with readable contrast (uses --text-secondary, not the dim --text-muted). */
+.form-consent-check {
+  flex-basis: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 2px;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  text-align: left;
+  cursor: pointer;
+}
+.form-consent-check input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: 1px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+.form-consent-check a { color: var(--text-secondary); text-decoration: underline; }
+.form-consent-check a:hover { color: var(--accent); }
 
 .waitlist-count {
   font-size: 13px;
@@ -723,6 +749,62 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .volume-formula span { font-size: 20px; font-weight: 700; color: var(--accent); }
 .volume-formula .op  { color: var(--text-muted); font-weight: 400; }
 .volume-formula > span:last-child { font-size: 26px; text-shadow: 0 0 18px rgba(167,255,65,0.35); }
+
+/* ─── FAQ (AI Overview / answer-engine target) ───────── */
+.faq { padding: var(--section-pad) 0; }
+.faq .container { text-align: center; }
+.faq h2 {
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 40px;
+}
+.faq-list {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: left;
+}
+.faq-item {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-card);
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: border-color 200ms ease;
+}
+.faq-item[open] { border-color: rgba(167,255,65,0.4); }
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 18px 22px;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '';
+  flex-shrink: 0;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: rotate(45deg);
+  transition: transform 200ms ease;
+}
+.faq-item[open] summary::after { transform: rotate(-135deg); }
+.faq-item summary:hover { color: var(--accent); }
+.faq-answer {
+  margin: 0;
+  padding: 0 22px 20px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
 
 /* ─── HOW IT WORKS ────────────────────────────────── */
 .how-it-works { padding: var(--section-pad) 0; }
@@ -1219,6 +1301,20 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
   .hero { padding-top: 88px; min-height: auto; padding-bottom: 60px; }
   .hero-row { flex-direction: column; gap: 0; padding-bottom: 0; }
+
+  /* Surface the email form high on mobile; push secondary proof copy below. */
+  .hero-content { display: flex; flex-direction: column; }
+  .hero-content > .hero-eyebrow        { order: 1; }
+  .hero-content > .hero-headline       { order: 2; }
+  .hero-content > .hero-sub            { order: 3; }
+  .hero-content > .waitlist-count      { order: 4; }
+  .hero-content > .platform-picker     { order: 5; }
+  .hero-content > .waitlist-form       { order: 6; }
+  .hero-content > .form-privacy        { order: 7; }
+  .hero-content > .form-message        { order: 8; }
+  .hero-content > .hero-differentiator { order: 9; }
+  .hero-content > .hero-proof          { order: 10; }
+  .hero-content > .hero-launch         { order: 11; }
 
   /* ── Podium → swipe carousel ── */
   .hero-phones { width: 100%; overflow: hidden; margin-top: 24px; }

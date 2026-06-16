@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Volum: App de Gimnasio Gratis · Sobrecarga Progresiva Simplificada</title>
-  <meta name="description" content="Sabe exactamente qué levantar en cada sesión. Volum planifica tu entrenamiento: peso, series y repeticiones. Tu volumen crece automáticamente. App de gimnasio gratis para Android e iOS, lanzamiento 2026.">
+  <meta name="description" content="Sabe exactamente qué levantar en cada sesión. Volum planifica tu entrenamiento: peso, series y repeticiones. Tu volumen crece automáticamente. App de gimnasio gratis para Android e iOS, lanzamiento Q3 2026.">
 
   <meta property="og:title"       content="Volum: App de Gimnasio Gratis">
   <meta property="og:description" content="Sabe exactamente qué levantar en cada sesión. Volum planifica tu entrenamiento para que tu volumen crezca automáticamente.">
@@ -19,18 +19,20 @@
   <link rel="alternate" hreflang="en" href="https://app-volum.com/">
   <link rel="alternate" hreflang="es" href="https://app-volum.com/es/">
   <link rel="alternate" hreflang="pt" href="https://app-volum.com/pt/">
+  <link rel="alternate" hreflang="x-default" href="https://app-volum.com/">
 
   <link rel="preload" as="image" href="/assets/hero-bg.png">
 
-  <script defer data-domain="bouncingballentertainment.github.io/volum-website"
+  <script defer data-domain="app-volum.com"
           src="https://plausible.io/js/script.js"></script>
+  <script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script>
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Volum",
-    "description": "Free workout tracker app that plans every session: weight, sets, and reps. Your volume grows automatically.",
+    "description": "App de gimnasio gratis que planifica cada sesión: peso, series y repeticiones. Tu volumen crece automáticamente.",
     "operatingSystem": ["Android", "iOS"],
     "applicationCategory": "HealthApplication",
     "inLanguage": ["en", "es", "pt"],
@@ -39,9 +41,53 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué app te dice exactamente cuánto peso levantar?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Volum te indica el peso, las series y las repeticiones exactas de cada ejercicio antes de empezar. Analiza tu historial de entrenamiento y aplica la sobrecarga progresiva automáticamente con su AI Coach, para que nunca tengas que adivinar tu próximo peso." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuál es la mejor app para sobrecarga progresiva?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Volum está hecho específicamente para la sobrecarga progresiva. En lugar de solo registrar lo que hiciste, planifica tu próxima sesión, aumentando peso, repeticiones o series automáticamente según tu rendimiento, para que tu volumen siga subiendo semana tras semana." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo saber cuándo subir el peso en el gimnasio?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Una regla simple: aumenta el peso cuando completes todas las series y repeticiones planificadas dejando una o dos repeticiones en reserva. Volum lo controla por ti y te dice exactamente cuándo y cuánto añadir en cada sesión." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿En qué se diferencia Volum de otras apps de entrenamiento?",
+        "acceptedAnswer": { "@type": "Answer", "text": "La mayoría de las apps solo registran lo que ya hiciste. Volum es un planificador: te dice qué hacer a continuación. Calcula el peso, las series y las repeticiones de cada sesión por adelantado y las registra mientras entrenas, sin hojas de cálculo." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto peso debo añadir cada semana?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Para la mayoría de los ejercicios, añadir alrededor del 2,5 a 5 por ciento al alcanzar tus repeticiones objetivo es un ritmo sostenible. La cantidad ideal depende del ejercicio y tu recuperación, así que Volum la calcula por ejercicio para que cada aumento sea seguro." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Volum es gratis y en qué plataformas está disponible?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sí. Volum es una app de entrenamiento gratuita para Android e iOS, con lanzamiento en el Q3 de 2026. Únete a la lista de espera para obtener acceso anticipado y un único correo el día del lanzamiento, sin tarjeta de crédito." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué significa el volumen en el entrenamiento con pesas?",
+        "acceptedAnswer": { "@type": "Answer", "text": "El volumen de entrenamiento es el total de series, repeticiones y peso — todo el trabajo que mueves a lo largo del tiempo. Es uno de los principales motores de las ganancias de fuerza y músculo. Volum mide tu volumen en cada sesión y lo aumenta de forma gradual." }
+      }
+    ]
+  }
+  </script>
+
   <meta name="theme-color" content="#0A121E">
   <link rel="icon" href="/assets/icon.png">
-  <link rel="stylesheet" href="/style.css?v=1.7">
+  <link rel="stylesheet" href="/style.css?v=1.9">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.rel='stylesheet'">
@@ -116,11 +162,15 @@
                  required autocomplete="email">
           <button class="btn btn-accent" type="submit" id="hero-submit-btn"
                   data-i18n="hero_btn">Get Early Access</button>
+          <label class="form-consent-check">
+            <input type="checkbox" name="consent" value="I agree to receive launch emails and accept the Privacy Policy" required>
+            <span data-i18n-html="form_consent">I agree to receive a launch-day email from Volum and accept the <a href="https://bouncingballentertainment.github.io/volum-legal/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.</span>
+          </label>
         </form>
         <p class="form-privacy" data-i18n="form_privacy">No credit card. No spam. One email on launch day.</p>
-        <p class="form-consent" data-i18n-html="form_consent">By joining you agree to our <a href="https://bouncingballentertainment.github.io/volum-legal/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.</p>
+        <!-- consent moved into form as required opt-in checkbox -->
         <p class="form-message" id="hero-form-msg" aria-live="polite"></p>
-        <p class="hero-launch" data-i18n="hero_launch">Launching 2026. Android & iOS.</p>
+        <p class="hero-launch" data-i18n="hero_launch">Launching Q3 2026. Android & iOS.</p>
       </div>
 
       <div class="hero-phones" aria-label="App screenshots">
@@ -346,9 +396,13 @@
                    required autocomplete="email">
             <button class="btn btn-accent" type="submit" id="mid-submit-btn"
                     data-i18n="hero_btn">Get Early Access</button>
+            <label class="form-consent-check">
+              <input type="checkbox" name="consent" value="I agree to receive launch emails and accept the Privacy Policy" required>
+              <span data-i18n-html="form_consent">I agree to receive a launch-day email from Volum and accept the <a href="https://bouncingballentertainment.github.io/volum-legal/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.</span>
+            </label>
           </form>
           <p class="form-privacy" data-i18n="form_privacy">No credit card. No spam. One email on launch day.</p>
-          <p class="form-consent" data-i18n-html="form_consent">By joining you agree to our <a href="https://bouncingballentertainment.github.io/volum-legal/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.</p>
+          <!-- consent moved into form as required opt-in checkbox -->
           <p class="form-message" id="mid-form-msg" aria-live="polite"></p>
         </div>
       </div>
@@ -402,6 +456,44 @@
     </div>
   </section>
 
+  <!-- ════════════════════════════════ FAQ ═════════════════════════════════ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <p class="eyebrow" data-i18n="faq_eyebrow">Preguntas y respuestas</p>
+      <h2 data-i18n="faq_h2">Preguntas frecuentes</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary data-i18n="faq_q1">¿Qué app te dice exactamente cuánto peso levantar?</summary>
+          <p class="faq-answer" data-i18n="faq_a1">Volum te indica el peso, las series y las repeticiones exactas de cada ejercicio antes de empezar. Analiza tu historial de entrenamiento y aplica la sobrecarga progresiva automáticamente con su AI Coach, para que nunca tengas que adivinar tu próximo peso.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq_q2">¿Cuál es la mejor app para sobrecarga progresiva?</summary>
+          <p class="faq-answer" data-i18n="faq_a2">Volum está hecho específicamente para la sobrecarga progresiva. En lugar de solo registrar lo que hiciste, planifica tu próxima sesión, aumentando peso, repeticiones o series automáticamente según tu rendimiento, para que tu volumen siga subiendo semana tras semana.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq_q3">¿Cómo saber cuándo subir el peso en el gimnasio?</summary>
+          <p class="faq-answer" data-i18n="faq_a3">Una regla simple: aumenta el peso cuando completes todas las series y repeticiones planificadas dejando una o dos repeticiones en reserva. Volum lo controla por ti y te dice exactamente cuándo y cuánto añadir en cada sesión.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq_q4">¿En qué se diferencia Volum de otras apps de entrenamiento?</summary>
+          <p class="faq-answer" data-i18n="faq_a4">La mayoría de las apps solo registran lo que ya hiciste. Volum es un planificador: te dice qué hacer a continuación. Calcula el peso, las series y las repeticiones de cada sesión por adelantado y las registra mientras entrenas, sin hojas de cálculo.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq_q5">¿Cuánto peso debo añadir cada semana?</summary>
+          <p class="faq-answer" data-i18n="faq_a5">Para la mayoría de los ejercicios, añadir alrededor del 2,5 a 5 por ciento al alcanzar tus repeticiones objetivo es un ritmo sostenible. La cantidad ideal depende del ejercicio y tu recuperación, así que Volum la calcula por ejercicio para que cada aumento sea seguro.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq_q6">¿Volum es gratis y en qué plataformas está disponible?</summary>
+          <p class="faq-answer" data-i18n="faq_a6">Sí. Volum es una app de entrenamiento gratuita para Android e iOS, con lanzamiento en el Q3 de 2026. Únete a la lista de espera para obtener acceso anticipado y un único correo el día del lanzamiento, sin tarjeta de crédito.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq_q7">¿Qué significa el volumen en el entrenamiento con pesas?</summary>
+          <p class="faq-answer" data-i18n="faq_a7">El volumen de entrenamiento es el total de series, repeticiones y peso — todo el trabajo que mueves a lo largo del tiempo. Es uno de los principales motores de las ganancias de fuerza y músculo. Volum mide tu volumen en cada sesión y lo aumenta de forma gradual.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <!-- ════════════════════════════ WAITLIST CTA ════════════════════════════ -->
   <section class="waitlist-section" id="waitlist">
     <div class="container waitlist-inner">
@@ -422,9 +514,13 @@
                required autocomplete="email">
         <button class="btn btn-accent" type="submit" id="bottom-submit-btn"
                 data-i18n="cta_btn">Notify Me on Launch Day</button>
+        <label class="form-consent-check">
+          <input type="checkbox" name="consent" value="I agree to receive launch emails and accept the Privacy Policy" required>
+          <span data-i18n-html="form_consent">I agree to receive a launch-day email from Volum and accept the <a href="https://bouncingballentertainment.github.io/volum-legal/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.</span>
+        </label>
       </form>
       <p class="form-privacy" data-i18n="form_privacy">No credit card. No spam. One email on launch day.</p>
-      <p class="form-consent" data-i18n-html="form_consent">By joining you agree to our <a href="https://bouncingballentertainment.github.io/volum-legal/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.</p>
+      <!-- consent moved into form as required opt-in checkbox -->
       <p class="form-message" id="bottom-form-msg" aria-live="polite"></p>
       <div class="share-nudge" id="share-nudge" style="display:none;">
         <span data-i18n="share_nudge">Know someone who lifts?</span>
@@ -472,6 +568,6 @@
   </footer>
 
   <script>try{localStorage.setItem('volum_lang','es');}catch(e){}</script>
-  <script src="/script.js?v=1.7"></script>
+  <script src="/script.js?v=1.9"></script>
 </body>
 </html>
