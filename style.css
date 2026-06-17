@@ -1683,7 +1683,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 
 /* ── Mid-CTA data motif ── */
-.mid-cta { position:relative; overflow:hidden; }
+.mid-cta { position:relative; overflow:hidden;
+  background: radial-gradient(78% 135% at 82% 45%, rgba(167,255,65,0.08), transparent 58%); }
 .mid-cta::before {
   content:''; position:absolute; inset:0; z-index:0; pointer-events:none;
   background-image:
@@ -1699,11 +1700,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .mcd-bars { display:flex; align-items:flex-end; gap:6px; height:66px; }
 .mcd-bars span {
   flex:1; min-width:6px; border-radius:4px 4px 0 0; transform-origin:bottom;
-  background: linear-gradient(to top, rgba(167,255,65,0.30), rgba(167,255,65,0.62));
+  background: linear-gradient(to top, rgba(167,255,65,0.55), var(--accent));
+  box-shadow: 0 0 11px rgba(167,255,65,0.28);
 }
 .mcd-bars .mcd-peak {
-  background: linear-gradient(to top, rgba(167,255,65,0.55), var(--accent));
-  box-shadow: 0 0 16px rgba(167,255,65,0.55);
+  background: linear-gradient(to top, var(--accent), #c8ff80);
+  box-shadow: 0 0 22px rgba(167,255,65,0.65);
 }
 .mcd-caption { font-size:13px; font-weight:600; color:var(--text-secondary); margin-top:11px; }
 .mcd-arrow { color:var(--accent); font-size:10px; }
@@ -1720,7 +1722,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .mid-cta.charged .mcd-bars span:nth-child(10) { animation-delay: 585ms; }
 @keyframes bar-grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
 @media (max-width:768px) {
-  .mid-cta-left { max-width:100%; }
+  .mid-cta-left { max-width:100%; flex:none; }
   .mid-cta-data { display:flex; flex-direction:column; align-items:center; }
   .mcd-bars { width:100%; max-width:300px; }
   .mcd-caption { text-align:center; }
