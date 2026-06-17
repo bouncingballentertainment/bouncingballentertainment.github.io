@@ -21,7 +21,7 @@
   <link rel="alternate" hreflang="pt" href="https://app-volum.com/pt/">
   <link rel="alternate" hreflang="x-default" href="https://app-volum.com/">
 
-  <link rel="preload" as="image" href="assets/hero-bg.png">
+  <link rel="preload" as="image" href="assets/icon.png">
 
   <script defer data-domain="app-volum.com"
           src="https://plausible.io/js/script.js"></script>
@@ -99,7 +99,8 @@
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo" aria-label="Volum home">
-        <img src="assets/Wordmark.png" alt="Volum">
+        <img src="assets/icon.png" alt="" class="nav-logo-mark">
+        <span class="nav-logo-text">Volum</span>
       </a>
       <div class="nav-links">
         <a href="#features" data-i18n="nav_features">Features</a>
@@ -135,13 +136,17 @@
 
   <!-- ════════════════════════════════ HERO ════════════════════════════════ -->
   <section class="hero">
-    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-grid"></div>
+      <div class="hero-glow hero-glow-blue"></div>
+      <div class="hero-glow hero-glow-lime"></div>
+    </div>
 
     <div class="container hero-row">
 
       <div class="hero-content">
         <p class="hero-eyebrow" data-i18n="hero_eyebrow">Gym Tracker · Android & iOS</p>
-        <h1 class="hero-headline" data-i18n-html="hero_headline">You always know<br>what to lift.</h1>
+        <h1 class="hero-headline" data-i18n-html="hero_headline">You always know<br><span class="hl">what to lift.</span></h1>
         <p class="hero-sub" data-i18n="hero_sub">
           Stop wasting 20 minutes deciding what to lift. Volum plans every session: the exact weight, sets, and reps.
         </p>
@@ -172,39 +177,32 @@
         <p class="hero-launch" data-i18n="hero_launch">Launching Q3 2026. Android & iOS.</p>
       </div>
 
-      <div class="hero-phones" aria-label="App screenshots">
-        <div class="podium-deck">
-
-          <div class="podium-card podium-left">
-            <img src="assets/app_iamges/resized/Volum App (2).jpeg"
-                 alt="Volum workout screen showing Back and Front Shoulder routine with 7 exercises, sets, reps, and weight for each"
-                 class="showcase-img" loading="lazy" width="375" height="812">
-            <div class="showcase-overlay">
-              <h3 data-i18n="showcase1_h3">Every set mapped out</h3>
-              <p data-i18n="showcase1_p">Weight, sets, and reps for every exercise. Ready before you walk in.</p>
-            </div>
+      <div class="hero-visual" aria-label="Volum app screens">
+        <div class="hero-stage">
+          <div class="hero-screen hero-screen-back">
+            <img src="assets/app-workout.jpeg"
+                 alt="Volum workout screen showing each exercise with its planned sets, reps, and weight"
+                 loading="lazy" width="980" height="2048">
+          </div>
+          <div class="hero-screen hero-screen-front">
+            <img src="assets/app-home.jpeg"
+                 alt="Volum home screen showing a 9-day streak, 10,580 lbs weekly volume, and 37 personal records"
+                 loading="eager" width="980" height="2048">
           </div>
 
-          <div class="podium-card podium-center">
-            <img src="assets/app_iamges/home.jpeg"
-                 alt="Volum home screen showing 9-day streak, 10,580 lbs weekly volume, 37 personal records, and workout routines"
-                 class="showcase-img" loading="eager" width="375" height="812">
-            <div class="showcase-overlay">
-              <h3 data-i18n="showcase2_h3">Everything in one place</h3>
-              <p data-i18n="showcase2_p">Streak, weekly volume, PRs, and all your routines on one screen.</p>
-            </div>
+          <div class="hero-datacard">
+            <span class="hero-datacard-label" data-i18n="hero_card_label">Total volume tracked</span>
+            <span class="hero-datacard-value"><span class="hero-datacard-num" data-countup="446519">446,519</span> <span class="hero-datacard-unit">lbs</span></span>
+            <svg class="hero-spark" viewBox="0 0 200 70" fill="none" preserveAspectRatio="none" aria-hidden="true">
+              <path class="hero-spark-area" d="M0,55 L25,58 L50,48 L75,52 L100,40 L125,43 L150,30 L175,22 L200,10 L200,70 L0,70 Z"></path>
+              <path class="hero-spark-line" pathLength="1" d="M0,55 L25,58 L50,48 L75,52 L100,40 L125,43 L150,30 L175,22 L200,10"></path>
+            </svg>
+            <span class="hero-datacard-trend" data-i18n="hero_card_trend">↑ Climbing every session</span>
           </div>
 
-          <div class="podium-card podium-right">
-            <img src="assets/app_iamges/resized/Volum App (9).jpeg"
-                 alt="Volum analytics screen showing volume progression chart, 446,519 lbs total volume across 157 workouts"
-                 class="showcase-img" loading="lazy" width="375" height="812">
-            <div class="showcase-overlay">
-              <h3 data-i18n="showcase3_h3">Volume that only goes up</h3>
-              <p data-i18n="showcase3_p">446,519 lbs tracked. Every session adds to the curve.</p>
-            </div>
+          <div class="hero-chip">
+            <span class="hero-chip-up" aria-hidden="true">▲</span> +5 lbs <em data-i18n="hero_chip">next session</em>
           </div>
-
         </div>
       </div>
 
@@ -378,8 +376,25 @@
   <section class="mid-cta">
     <div class="container">
       <div class="mid-cta-inner">
-        <p class="mid-cta-heading" data-i18n="mid_cta_text">Your next session, planned before you walk in.</p>
-        <blockquote class="mid-cta-quote" data-i18n-html="mid_cta_quote">"With Volum I walk in ready, execute, and can actually see my progression improving."<cite> · Daniela Rojas</cite></blockquote>
+        <div class="mid-cta-left">
+          <p class="mid-cta-heading" data-i18n="mid_cta_text">Your next session, planned before you walk in.</p>
+          <div class="mid-cta-data">
+            <div class="mcd-bars" aria-hidden="true">
+              <span style="height:20%"></span>
+              <span style="height:30%"></span>
+              <span style="height:25%"></span>
+              <span style="height:42%"></span>
+              <span style="height:38%"></span>
+              <span style="height:55%"></span>
+              <span style="height:64%"></span>
+              <span style="height:78%"></span>
+              <span style="height:90%"></span>
+              <span style="height:100%" class="mcd-peak"></span>
+            </div>
+            <p class="mcd-caption"><span class="mcd-arrow" aria-hidden="true">▲</span> <span data-i18n="mid_cta_stat">Your weekly volume, climbing every session</span></p>
+          </div>
+          <blockquote class="mid-cta-quote" data-i18n-html="mid_cta_quote">"With Volum I walk in ready, execute, and can actually see my progression improving."<cite> · Daniela Rojas</cite></blockquote>
+        </div>
         <div class="mid-cta-right">
           <div class="platform-picker" data-form="waitlist-form-mid">
             <button type="button" class="btn btn-ghost btn-sm platform-btn" data-platform="android" data-i18n="platform_android">Android</button>
@@ -415,6 +430,26 @@
       <p class="section-sub" data-i18n="stats_sub">
         Volum was built and battle-tested through the founder's own training. Not simulated data.
       </p>
+      <div class="volume-chart" id="volume-chart">
+        <svg class="vc-svg" viewBox="0 0 920 340" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="vc-fill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#A7FF41" stop-opacity="0.30"></stop>
+              <stop offset="100%" stop-color="#A7FF41" stop-opacity="0"></stop>
+            </linearGradient>
+          </defs>
+          <g class="vc-grid" stroke="#2A2A2A" stroke-width="1">
+            <line x1="0" y1="85" x2="920" y2="85"></line>
+            <line x1="0" y1="170" x2="920" y2="170"></line>
+            <line x1="0" y1="255" x2="920" y2="255"></line>
+          </g>
+          <path class="vc-area" fill="url(#vc-fill)" d="M0,272 L60,280 L122,256 L184,266 L246,234 L308,246 L370,210 L432,222 L494,186 L556,166 L618,176 L680,136 L742,114 L804,88 L866,52 L890,42 L890,315 L0,315 Z"></path>
+          <path class="vc-line" pathLength="1" fill="none" stroke="#A7FF41" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M0,272 L60,280 L122,256 L184,266 L246,234 L308,246 L370,210 L432,222 L494,186 L556,166 L618,176 L680,136 L742,114 L804,88 L866,52 L890,42"></path>
+          <circle class="vc-dot" cx="890" cy="42" r="6" fill="#A7FF41"></circle>
+        </svg>
+        <span class="vc-caption vc-cap-start" data-i18n="vc_start">Session 1</span>
+        <span class="vc-caption vc-cap-end" data-i18n="vc_end">Session 157</span>
+      </div>
       <div class="stats-grid">
         <div class="stat-item">
           <span class="stat-number" data-target="446519">446,519</span>
@@ -531,8 +566,9 @@
   <!-- ════════════════════════════════ FOOTER ══════════════════════════════ -->
   <footer class="footer">
     <div class="container footer-inner">
-      <a href="index.html" class="nav-logo" aria-label="Volum home">
-        <img src="assets/Wordmark.png" alt="Volum" style="height:26px;width:auto;">
+      <a href="index.html" class="nav-logo footer-logo" aria-label="Volum home">
+        <img src="assets/icon.png" alt="" class="nav-logo-mark">
+        <span class="nav-logo-text">Volum</span>
       </a>
       <nav class="footer-links" aria-label="Footer navigation">
         <a href="#features"    data-i18n="nav_features">Features</a>

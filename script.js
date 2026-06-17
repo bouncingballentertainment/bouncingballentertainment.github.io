@@ -12,11 +12,13 @@ const TRANSLATIONS = {
     nav_features:'Features', nav_waitlist:'Join Waitlist',
     nav_how_it_works:'How It Works', nav_real_results:'Real Results', nav_testimonials:'Testimonials',
     hero_eyebrow:'Gym Tracker · Android & iOS',
-    hero_headline:'You always know<br>what to lift.',
+    hero_headline:'You always know<br><span class="hl">what to lift.</span>',
     hero_sub:'Stop wasting 20 minutes deciding what to lift. Volum plans every session: the exact weight, sets, and reps.',
     hero_proof:'One founder. 157 real sessions. 446,519 lbs tracked.',
     hero_input:'Your email address', hero_btn:'Get Early Access',
     hero_launch:'Launching Q3 2026.',
+    hero_card_label:'Total volume tracked', hero_card_trend:'↑ Climbing every session', hero_chip:'next session',
+    vc_start:'Session 1', vc_end:'Session 157', mid_cta_stat:'Your weekly volume, climbing every session',
     hero_differentiator:'Most trackers log what you did. Volum tells you what to do next.',
     waitlist_hint:'Waitlist open · Limited early access spots.',
     features_eyebrow:'Progressive overload, automated',
@@ -95,11 +97,13 @@ const TRANSLATIONS = {
     nav_features:'Funciones', nav_waitlist:'Unirse a la lista de espera',
     nav_how_it_works:'Cómo Funciona', nav_real_results:'Resultados Reales', nav_testimonials:'Testimonios',
     hero_eyebrow:'App de Gimnasio · Android & iOS',
-    hero_headline:'Siempre sabes<br>cuánto levantar.',
+    hero_headline:'Siempre sabes<br><span class="hl">cuánto levantar.</span>',
     hero_sub:'Deja de perder 20 minutos decidiendo qué levantar. Volum planifica cada sesión: el peso exacto, las series y las repeticiones.',
     hero_proof:'Un fundador. 157 sesiones reales. 446.519 lbs registradas.',
     hero_input:'Tu correo electrónico', hero_btn:'Obtener Acceso Anticipado',
     hero_launch:'Lanzamiento Q3 2026.',
+    hero_card_label:'Volumen total registrado', hero_card_trend:'↑ Sube cada sesión', hero_chip:'próxima sesión',
+    vc_start:'Sesión 1', vc_end:'Sesión 157', mid_cta_stat:'Tu volumen semanal, subiendo cada sesión',
     hero_differentiator:'La mayoría de apps registran lo que hiciste. Volum te dice qué hacer después.',
     waitlist_hint:'Lista de espera abierta · Plazas de acceso anticipado limitadas.',
     features_eyebrow:'Sobrecarga progresiva, automatizada',
@@ -178,11 +182,13 @@ const TRANSLATIONS = {
     nav_features:'Funcionalidades', nav_waitlist:'Entrar na lista de espera',
     nav_how_it_works:'Como Funciona', nav_real_results:'Resultados Reais', nav_testimonials:'Depoimentos',
     hero_eyebrow:'App de Treino · Android & iOS',
-    hero_headline:'Você sempre sabe<br>o quanto levantar.',
+    hero_headline:'Você sempre sabe<br><span class="hl">o quanto levantar.</span>',
     hero_sub:'Pare de perder 20 minutos decidindo o que levantar. Volum planeja cada sessão: o peso exato, séries e repetições.',
     hero_proof:'Um fundador. 157 sessões reais. 446.519 lbs registrados.',
     hero_input:'Seu endereço de e-mail', hero_btn:'Obter Acesso Antecipado',
     hero_launch:'Lançamento Q3 2026.',
+    hero_card_label:'Volume total registrado', hero_card_trend:'↑ Sobe a cada sessão', hero_chip:'próxima sessão',
+    vc_start:'Sessão 1', vc_end:'Sessão 157', mid_cta_stat:'Seu volume semanal, subindo a cada sessão',
     hero_differentiator:'A maioria dos apps registra o que você fez. Volum te diz o que fazer a seguir.',
     waitlist_hint:'Lista aberta · Vagas de acesso antecipado limitadas.',
     features_eyebrow:'Sobrecarga progressiva, automatizada',
@@ -815,6 +821,50 @@ function initPodiumCarousel() {
   deck.addEventListener('scroll', updateActive, { passive: true });
 }
 
+/* ─── HERO VOLUME COUNTER ───────────────────────── */
+
+function initHeroCounter() {
+  const el = document.querySelector('.hero-datacard-num[data-countup]');
+  if (!el) return;
+  const target = parseInt(el.dataset.countup, 10);
+  if (reduceMotion) { el.textContent = target.toLocaleString(); return; }
+  const dur = 1500, start = performance.now();
+  function tick(now) {
+    const p = Math.min((now - start) / dur, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.floor(ease * target).toLocaleString();
+    if (p < 1) requestAnimationFrame(tick);
+    else el.textContent = target.toLocaleString();
+  }
+  requestAnimationFrame(tick);
+}
+
+function initMidBars() {
+  const sec = document.querySelector('.mid-cta');
+  if (!sec || !sec.querySelector('.mcd-bars')) return;
+  if (reduceMotion) { sec.classList.add('charged'); return; }
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { sec.classList.add('charged'); obs.unobserve(sec); }
+    });
+  }, { threshold: 0.4 });
+  obs.observe(sec);
+}
+
+/* ─── VOLUME CHART DRAW ──────────────────────────── */
+
+function initVolumeChart() {
+  const chart = document.getElementById('volume-chart');
+  if (!chart) return;
+  if (reduceMotion) { chart.classList.add('drawn'); return; }
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { chart.classList.add('drawn'); obs.unobserve(chart); }
+    });
+  }, { threshold: 0.3 });
+  obs.observe(chart);
+}
+
 /* ─── INIT ───────────────────────────────────────── */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -841,6 +891,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initFormulaReveal();
   initCountUp();
+  initHeroCounter();
+  initVolumeChart();
+  initMidBars();
   initStepLoop();
   initTestimonialCards();
 });
