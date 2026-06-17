@@ -1654,19 +1654,25 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .hero-datacard { width:196px; left:-24px; bottom:70px; }
 }
 @media (max-width:768px) {
-  .hero-visual { width:100%; display:flex; justify-content:center; margin-top:10px; }
-  .hero-stage  { width:300px; height:444px; }
-  .hero-screen-front { width:210px; left:45px; }
+  .hero-visual { width:100%; display:flex; justify-content:center; margin-top:18px; }
+  .hero-stage  { width:320px; height:476px; }
+  .hero-screen-front { width:226px; left:47px; }
   .hero-screen-back  { display:none; }
-  .hero-chip { top:6px; right:2px; }
-  .hero-datacard { left:-8px; bottom:30px; width:182px; padding:13px 15px; }
-  .hero-datacard-value { font-size:25px; }
+  .hero-chip { top:2px; right:0; }
+  .hero-datacard { left:-6px; bottom:34px; width:188px; padding:14px 16px; }
+  .hero-datacard-value { font-size:26px; }
   .vc-svg { height:220px; }
 }
 @media (max-width:480px) {
-  .hero-stage { width:266px; height:412px; }
-  .hero-screen-front { width:196px; left:35px; }
-  .hero-datacard { width:168px; left:-6px; }
+  .hero-stage { width:294px; height:444px; }
+  .hero-screen-front { width:212px; left:41px; }
+  .hero-datacard { width:176px; left:-4px; bottom:30px; }
+  .hero-chip { top:-2px; }
+}
+@media (max-width:360px) {
+  .hero-stage { width:280px; height:424px; }
+  .hero-screen-front { width:202px; left:39px; }
+  .hero-datacard { width:166px; }
 }
 
 /* ── Reduced motion: show final states ── */
@@ -1721,4 +1727,34 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 @media (prefers-reduced-motion: reduce) {
   .mcd-bars span { transform: scaleY(1) !important; }
+}
+
+
+/* ── Mobile readability & layout polish (v5) ── */
+@media (max-width:768px) {
+  .hero-sub,
+  .hero-differentiator,
+  .feature-card p,
+  .testimonial-quote,
+  .volume-body,
+  .step p,
+  .section-sub,
+  .features-tagline,
+  .faq-answer,
+  .features-ai-callout p { text-align:left; word-spacing:normal; line-height:1.7; }
+
+  .hero-headline { font-size:38px; letter-spacing:-1px; }
+  .hero { padding-bottom:48px; }
+  .mid-cta-heading { font-size:21px; }
+}
+@media (max-width:560px) {
+  .stats-grid { grid-template-columns:1fr; gap:26px; }
+  .stat-number { font-size:42px; }
+}
+@media (max-width:480px) {
+  .hero-headline { font-size:32px; }
+  .vc-svg { height:190px; }
+}
+@media (max-width:360px) {
+  .hero-headline { font-size:28px; }
 }
