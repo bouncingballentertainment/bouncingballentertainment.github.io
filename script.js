@@ -6,10 +6,6 @@ const IS_LAUNCHED    = false;
 const PLAY_STORE_URL = '#';
 const FETCH_TIMEOUT  = 5000;
 
-// Meta Pixel — paste your Pixel ID from Meta Events Manager (15–16 digits).
-// Leave '' to disable. Single source of truth for all three localized pages.
-const META_PIXEL_ID  = '26976497048719014';
-
 /* ─── TRANSLATIONS ───────────────────────────────── */
 const TRANSLATIONS = {
   en: {
@@ -290,19 +286,8 @@ function plausibleEvent(name, props) {
 }
 
 /* ─── META PIXEL ─────────────────────────────────── */
-
-function initMetaPixel() {
-  if (!META_PIXEL_ID) return;            // disabled until an ID is set
-  /* eslint-disable */
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-  document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  /* eslint-enable */
-  window.fbq('init', META_PIXEL_ID);
-  window.fbq('track', 'PageView');
-}
+// Pixel base code (init + PageView) lives inline in each page's <head>.
+// These helpers fire additional events against the global fbq it defines.
 
 // Fire a Meta standard event (e.g. 'Lead'), mirroring plausibleEvent.
 function pixelEvent(name, props) {
@@ -948,7 +933,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initHamburger();
   initLaunchState();
-  initMetaPixel();
   initEngagement();
 
   captureUTM('utm-source-hero');
