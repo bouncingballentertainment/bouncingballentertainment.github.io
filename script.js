@@ -514,6 +514,14 @@ function wireWaitlistForm(formId, msgId, submitBtnId, formLabel) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    // Platform choice (Android / iPhone) is mandatory.
+    const platformInput = form.querySelector('.platform-hidden-input');
+    if (platformInput && !platformInput.value) {
+      msgEl.textContent = t('platform_error');
+      msgEl.className   = 'form-message form-error-msg';
+      return;
+    }
+
     plausibleEvent('Waitlist_Submit', { form: formLabel });
 
     submitBtn.disabled = true;
