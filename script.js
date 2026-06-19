@@ -6,6 +6,10 @@ const IS_LAUNCHED    = false;
 const PLAY_STORE_URL = '#';
 const FETCH_TIMEOUT  = 5000;
 
+// Meta Pixel — paste your Pixel ID from Meta Events Manager (15–16 digits).
+// Leave '' to disable. Single source of truth for all three localized pages.
+const META_PIXEL_ID  = '26976497048719014';
+
 /* ─── TRANSLATIONS ───────────────────────────────── */
 const TRANSLATIONS = {
   en: {
@@ -285,6 +289,67 @@ function plausibleEvent(name, props) {
   if (window.plausible) window.plausible(name, { props: props || {} });
 }
 
+/* ─── META PIXEL ─────────────────────────────────── */
+
+function initMetaPixel() {
+  if (!META_PIXEL_ID) return;            // disabled until an ID is set
+  /* eslint-disable */
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  /* eslint-enable */
+  window.fbq('init', META_PIXEL_ID);
+  window.fbq('track', 'PageView');
+}
+
+// Fire a Meta standard event (e.g. 'Lead'), mirroring plausibleEvent.
+function pixelEvent(name, props) {
+  if (window.fbq) window.fbq('track', name, props || {});
+}
+
+// Fire a Meta CUSTOM event (e.g. waitlist button clicks / intent signals).
+function pixelCustomEvent(name, props) {
+  if (window.fbq) window.fbq('trackCustom', name, props || {});
+}
+
+/* ─── ENGAGEMENT (signup-quality signals) ────────── */
+
+// Scroll depth + time on page — these predict paid intent far better than
+// raw signup volume. Each milestone fires once per page load.
+function initEngagement() {
+  // Scroll depth: 25 / 50 / 75 / 100 %
+  const marks = [25, 50, 75, 100];
+  let fired = 0;
+  let ticking = false;
+
+  const checkDepth = () => {
+    ticking = false;
+    const doc = document.documentElement;
+    const scrollable = doc.scrollHeight - window.innerHeight;
+    if (scrollable <= 0) return;
+    const pct = ((window.scrollY || doc.scrollTop) / scrollable) * 100;
+    while (fired < marks.length && pct >= marks[fired]) {
+      const depth = marks[fired++];
+      plausibleEvent('Scroll_Depth', { depth: depth + '%' });
+      if (depth === 75) pixelEvent('ViewContent', { content_name: 'engaged_scroll' });
+    }
+  };
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(checkDepth); }
+  }, { passive: true });
+  checkDepth(); // catch short pages already fully visible
+
+  // Time on page: 15 / 30 / 60 / 120 s milestones, timers cleared on leave.
+  const seconds = [15, 30, 60, 120];
+  const timers = seconds.map(s =>
+    setTimeout(() => plausibleEvent('Time_On_Page', { seconds: s + 's' }), s * 1000)
+  );
+  window.addEventListener('pagehide', () => timers.forEach(clearTimeout), { once: true });
+}
+
 function fetchWithTimeout(url, ms, init) {
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), ms);
@@ -483,6 +548,7 @@ function wireWaitlistForm(formId, msgId, submitBtnId, formLabel) {
         msgEl.textContent  = t('form_success_' + formLabel);
         msgEl.className    = 'form-message form-success-msg';
         plausibleEvent('Waitlist_Success', { form: formLabel });
+        pixelEvent('Lead', { content_name: 'waitlist', source: formLabel });
 
         if (formLabel === 'bottom') {
           const nudge = document.getElementById('share-nudge');
@@ -498,6 +564,12 @@ function wireWaitlistForm(formId, msgId, submitBtnId, formLabel) {
       msgEl.className      = 'form-message form-error-msg';
       plausibleEvent('Waitlist_Error', { form: formLabel });
     }
+  });
+
+  // Intent signal: user tapped the CTA (fires even if email/consent invalid).
+  submitBtn.addEventListener('click', () => {
+    plausibleEvent('Waitlist_Click', { form: formLabel });
+    pixelCustomEvent('WaitlistButtonClick', { form: formLabel });
   });
 
   const emailInput = form.querySelector('input[type="email"]');
@@ -750,7 +822,10 @@ function initLaunchState() {
 
 function initNavEvents() {
   const navCta = document.querySelector('.nav-cta');
-  if (navCta) navCta.addEventListener('click', () => plausibleEvent('Nav_Waitlist_Click'));
+  if (navCta) navCta.addEventListener('click', () => {
+    plausibleEvent('Nav_Waitlist_Click');
+    pixelCustomEvent('WaitlistButtonClick', { form: 'nav' });
+  });
 
 }
 
@@ -873,6 +948,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initHamburger();
   initLaunchState();
+  initMetaPixel();
+  initEngagement();
 
   captureUTM('utm-source-hero');
   captureUTM('utm-source-mid');
