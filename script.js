@@ -519,6 +519,12 @@ function wireWaitlistForm(formId, msgId, submitBtnId, formLabel) {
     if (platformInput && !platformInput.value) {
       msgEl.textContent = t('platform_error');
       msgEl.className   = 'form-message form-error-msg';
+      const picker = document.querySelector('.platform-picker[data-form="' + formId + '"]');
+      if (picker) {
+        picker.classList.remove('shake');
+        void picker.offsetWidth;          // restart the shake animation
+        picker.classList.add('shake');
+      }
       return;
     }
 
@@ -850,6 +856,7 @@ function initPlatformPickers() {
           b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
         });
         hidden.value = btn.dataset.platform;
+        picker.classList.remove('shake');   // clear the error highlight
         const msgEl = document.getElementById(form.id.replace('waitlist-form-', '') + '-form-msg');
         if (msgEl && msgEl.classList.contains('form-error-msg')) {
           msgEl.textContent = '';
